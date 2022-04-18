@@ -1,0 +1,26 @@
+
+#mode-edit{
+  display: flex;
+  justify-content:flex-end;
+  margin: 0;
+  margin-right: 25%;
+}
+.svg-skill{
+  width: 80px;
+  height: 80px;
+}
+
+.form-description{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.form-description label{
+  color: beige;
+}
+
+.input-description{
+  background-color: aliceblue;
+  width: 40%;
+}

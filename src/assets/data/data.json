@@ -1,0 +1,11 @@
+{
+	"name": "Joaquín Orozco",
+	"puesto": "Front end Developer",
+  "description": "Como va? me llamo Joaquín Orozco, tengo 22 años, soy de San Gregorio, Santa fe, Argentina. Creo, desarrollo, actualizo y mantengo páginas y portales web. Sigo aprendiendo y adquiriendo nuevas habilidades día a día en función a las actuales y futuras demandas y tendencias tecnológicas en el campo de desarrollo de aplicaciones web. Me apaciona el mundo de la programación y ofrezco en cada proyecto total atención y dedicación.",
+  "skills": [{
+    "html": "../assets/html5.svg",
+    "javascript":"../../../assets/javascript.svg",
+    "css": "../../../assets/css3.svg"
+  }]
+
+}

@@ -1,0 +1,11 @@
+.contenedor{
+  width: 100%;
+  display: flex;
+  align-content: center;
+  flex-wrap: nowrap;
+  height: auto;
+  overflow: hidden;
+}
+
+
+

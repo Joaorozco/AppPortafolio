@@ -1,0 +1,31 @@
+#section-proyectos{
+  position: relative;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#section-proyectos h1{
+  color: #ff637d;
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 50px;
+}
+
+#container-proyectos{
+  padding-top: 30px;
+}
+
+#mode-edit{
+  display: flex;
+  justify-content:flex-end;
+  margin: 0;
+  margin-right: 25%;
+}
+
+#svg-pen{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HomeService } from 'src/app/service/home.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { SobreMiService } from 'src/app/service/sobre-mi.service';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -7,14 +7,16 @@ import { HomeService } from 'src/app/service/home.service';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent implements OnInit {
+  @Input() buttonDowload:String = "Descargar CV";
   sobreMi:any;
   constructor(
-    private datos: HomeService
+    private datos: SobreMiService
   ) { }
 
   ngOnInit(): void {
-    this.datos.obtenerDato().subscribe(data => {
-      this.sobreMi = data;
+    this.datos.obtenerDatosSobreMi().subscribe(data => {
+      console.log(data)
+      this.sobreMi = data
     })
   }
 

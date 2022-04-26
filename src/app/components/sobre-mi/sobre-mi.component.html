@@ -10,7 +10,13 @@
       {{sobreMi.description}}
     </p>
   </div>
-  <a href="../../../assets/ALexis Joaquin Orozco-CV.pdf" download="AlexisJoaquinOrozco-CV" id="dowload-cv" class="btn btn-danger">Descargar CV</a>
+  <a
+    href="../../../assets/ALexis Joaquin Orozco-CV.pdf"
+    download="AlexisJoaquinOrozco-CV"
+    id="dowload-cv"
+    class="btn btn-danger">
+    {{buttonDowload}}
+  </a>
 </div>
 <div id="section-skills">
   <h1 class="text-center">Skills</h1>
@@ -22,31 +28,31 @@
       <dd>
         <img
             class="svg-skill"
-            src="../../../assets/html5.svg">
+            [src]="sobreMi.skills.html">
           <img
             class="svg-skill"
-            src="../../../assets/javascript.svg">
+            [src]="sobreMi.skills.javascript">
           <img
             class="svg-skill"
-            src="../../../assets/css3.svg">
+            [src]="sobreMi.skills.css">
       </dd>
       <dt>Framework:</dt>
       <dd>
         <img
             class="svg-skill"
-            src="../../../assets/bootstrap-5-1.svg">
+            [src]="sobreMi.skills.bootstrap">
         <img
             class="svg-skill"
-            src="../../../assets/angular_coding_development_front-end_javascript_logo_web_icon.svg">
+            [src]="sobreMi.skills.angular">
       </dd>
       <dt>Tools:</dt>
       <dd>
         <img
             class="svg-skill"
-            src="../../../assets/git.svg">
+            [src]="sobreMi.skills.gitHub">
         <img
             class="svg-skill"
-            src="../../../assets/visual-studio-code-1.svg">
+            [src]="sobreMi.skills.visualStudioCode">
       </dd>
     </dl>
   </div>

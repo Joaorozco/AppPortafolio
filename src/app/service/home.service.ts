@@ -12,5 +12,5 @@ export class HomeService {
   obtenerDato(): Observable<any>{
     console.log("Es servicio esta corriendo");
     return this.http.get('./assets/data/data.json')
+    }
   }
-}

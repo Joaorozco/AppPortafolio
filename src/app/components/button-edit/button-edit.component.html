@@ -1,11 +1,37 @@
-<figure
- id="mode-edit"
->
-  <img id="svg-pen"src="../../../assets/mode_edit_white_24dp.svg">
-</figure>
-<form
-  class="form-description"
->
-  <label>Descripción:</label>
-  <input class="input-description" type="text">
-</form>
+<div class="btn-edit">
+  <button type="button" class="btn btn-dark btn-edit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
+    <img id="svg-pen" src="../../../assets/mode_edit_white_24dp.svg">
+  </button>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-light">
+        <h3 class="bg-light">Sobre mi</h3>
+        <form class="bg-light">
+          <label for="message-text d-block" class="col-form-label bg-light">Foto identificación:</label>
+          <div class="input-group mb-3 bg-light">
+            <input type="file" class="form-control" id="inputGroupFile01">
+          </div>
+          <div class="mb-3 bg-light">
+            <label for="message-text" class="col-form-label bg-light">Descripción:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+          <label for="message-text d-block" class="col-form-label bg-light">Skills:</label>
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile01">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer bg-light">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-secondary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>

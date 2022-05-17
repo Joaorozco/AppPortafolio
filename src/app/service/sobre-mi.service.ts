@@ -13,7 +13,6 @@ export class SobreMiService {
   ) { }
 
   obtenerDatosSobreMi(): Observable<any>{
-    console.log("Servicio sobre mi funcionando")
     return this.http.get('./assets/data/data.json')
   }
 }

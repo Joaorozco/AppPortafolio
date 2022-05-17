@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HomeComponent } from './components/home/home.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { EstudiosComponent } from './components/estudios/estudios.component';
 import { PortafoliosComponent } from './components/portafolios/portafolios.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-  {path: '',
-  redirectTo: '/home',
-  pathMatch: 'full',
+  { path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
   },
-  {path:"home",
-  component: HomeComponent,
+  { path:"home",
+    component: HomeComponent,
+    data: { animation: 'HomePage' }
   },
   {
     path:"sobre-mi",
@@ -30,11 +33,15 @@ const routes: Routes = [
   {
     path:"contacto",
     component: ContactoComponent,
+  },
+  {
+    path:"login",
+    component: LoginComponent,
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [BrowserAnimationsModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

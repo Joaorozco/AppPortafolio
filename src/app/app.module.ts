@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { PortafoliosComponent } from './components/portafolios/portafolios.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonEditComponent } from './components/button-edit/button-edit.component';
 import { EstudiosComponent } from './components/estudios/estudios.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,14 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
     ContactoComponent,
     ButtonEditComponent,
     EstudiosComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

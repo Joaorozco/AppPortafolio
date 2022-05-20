@@ -7,12 +7,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SobreMiService {
+  private apiURl = 'http://localhost:5000/sobreMi';
+  private apiskillsUrl = 'http://localhost:5000/skills'
 
   constructor(
     private http: HttpClient
   ) { }
 
   obtenerDatosSobreMi(): Observable<any>{
-    return this.http.get('./assets/data/data.json')
+    return this.http.get(this.apiURl);
+  }
+
+  obtenerDatosSkills(): Observable<any>{
+    return this.http.get(this.apiskillsUrl)
   }
 }

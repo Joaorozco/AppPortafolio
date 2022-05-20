@@ -12,12 +12,14 @@ import { ButtonEditService } from 'src/app/service/button-edit.service';
 })
 export class ButtonEditComponent implements OnInit {
   @Output() sendDataSobreMi: EventEmitter<DataSobreMi> = new EventEmitter;
+  dataSobreMi: any;
 
   constructor(
     private buttonEditService:ButtonEditService
   ) { }
 
   ngOnInit(): void {
+
   }
 
   profileForm = new FormGroup({
@@ -34,3 +36,6 @@ export class ButtonEditComponent implements OnInit {
 
 
 }
+
+
+

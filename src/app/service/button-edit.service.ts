@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ButtonEditService {
-  private apiUrl = '../../../assets/data/data.json';
+  private apiUrl = 'http://localhost:5000';
 
   constructor(
     private http: HttpClient
@@ -21,7 +21,7 @@ export class ButtonEditService {
 
   getData(dataSobreMi: DataSobreMi): Observable<DataSobreMi>{
     const url = `${this.apiUrl}/${dataSobreMi.file}`;
-    console.log(dataSobreMi.file)
+    console.log('Corriendo')
     return this.http.put<DataSobreMi>(url, dataSobreMi, httpOptions);
   };
 }

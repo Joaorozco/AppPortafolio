@@ -13,7 +13,7 @@
   ],
   "skills": [
     {
-      "html": "../assets/html5.svg",
+      "html": "../../../assets/html5.svg",
       "javascript":"../../../assets/javascript.svg",
       "css": "../../../assets/css3.svg",
       "bootstrap":"../../../assets/bootstrap-5-1.svg",

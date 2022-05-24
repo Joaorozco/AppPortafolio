@@ -26,5 +26,4 @@ export class SobreMiComponent implements OnInit {
       this.skills = data;
     })
   }
-
 }

@@ -24,6 +24,9 @@
   cursor: pointer;
   border: none;
 }
+.display{
+  display: none;
+}
 
 .btn-close{
   margin-left: auto;

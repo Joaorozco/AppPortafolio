@@ -19,13 +19,13 @@
   </a>
 <div id="section-skills" *ngFor="let data of skills">
       <h1 class="text-center">{{data.title}}</h1>
-  <div id="container-skills" *ngFor="let i of data.img" >
+      <h2>{{data.titulo}}</h2>
+  <div id="container-skills"  >
     <dl>
-      <dt>{{data.titulo}}</dt>
-      <dd >
-        <img 
+      <dd>
+        <img *ngFor="let src of data.img"
             class="svg-skill"
-            [src]="data.img[i]"
+            [src]="src"
             alt="SVG-Skill">
       </dd>
     </dl>

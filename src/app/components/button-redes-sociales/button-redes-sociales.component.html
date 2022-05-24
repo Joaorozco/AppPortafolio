@@ -1,0 +1,15 @@
+<div class="container-redes">
+  <ul class="display-f">
+    <li *ngFor="let data of dataRedes">
+      <a
+      [href]="data.href"
+      target="_blank"
+      >
+        <i
+        [class]="data.icon"
+        aria-hidden="true"
+        ></i>
+      </a>
+    </li>
+  </ul>
+</div>

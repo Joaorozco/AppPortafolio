@@ -16,34 +16,28 @@
       "title": "Skills"
     },
     {
-      "titulo": "Desarrollo",
+      "titulo": "Desarrollo:",
       "img":
       [
-        {
-          "html": "../../../assets/html5.svg",
-          "javascript":"../../../assets/javascript.svg",
-          "css": "../../../assets/css3.svg"
-        }
+        "../../../assets/html5.svg",
+        "../../../assets/javascript.svg",
+        "../../../assets/css3.svg"
       ]
     },
     {
-      "titulo":"Framework",
+      "titulo":"Framework:",
       "img":
       [
-        {
-          "bootstrap":"../../../assets/bootstrap-5-1.svg",
-          "angular":"../../../assets/angular.svg"
-        }
+        "../../../assets/bootstrap-5-1.svg",
+        "../../../assets/angular.svg"
       ]
     },
     {
-      "titulo":"Tools",
+      "titulo":"Tools:",
       "img":
       [
-        {
-          "gitHub": "../../../assets/git.svg",
-          "visualStudioCode": "../../../assets/visual-studio-code-1.svg"
-        }
+        "../../../assets/git.svg",
+        "../../../assets/visual-studio-code-1.svg"
       ]
     }
     ],
@@ -57,12 +51,17 @@
     {
       "src": "../../../assets/AppWork.png",
       "title": "TODO List",
-      "text": "Aplicación realizada con el framework Vue"
+      "text": "Aplicación desarrollada con Vue"
     },
     {
       "src": "../../../assets/WeatherApp.png",
       "title": "Wheater App",
-      "text": "Aplicación realizada con JavaScript vanilla, utilizando Fetch hacía una API Rest"
+      "text": "Aplicación desarrollada con JavaScript vanilla, utilizando Fetch hacía una API Rest"
+    },
+    {
+      "src": "../../../assets/task-list.png",
+      "title": "Task App",
+      "text": "Aplicación desarrollada con Angular y JSON Server"
     }
   ]
 }

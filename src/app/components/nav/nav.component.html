@@ -1,29 +1,18 @@
-<header id="header">
-  <nav>
-    <!-- <div class="toggle-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div> -->
-      <ul>
-          <a class="links" id="home" routerLink="/home">
-              <li>Home</li>
-          </a>
-          <a class="links" id="sobre-mi" routerLink="/sobre-mi">
-              <li>Sobre mí</li>
-          </a>
-          <a class="links" id="sobre-mi" routerLink="/educacion">
-              <li>Educación</li>
-          </a>
-          <a class="links" id="proyectos" routerLink="/portafolios">
-              <li>Portafolios</li>
-          </a>
-          <a class="links" id="contacto" routerLink="/contacto">
-              <li>Contacto</li>
-          </a>
-      </ul>
-      <footer id="footer">
-          <p class="text-center">Hecho por Joaquín Orozco</p>
-      </footer>
-  </nav>
-</header>
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+  <div class="button-container">
+    <button class="btn-open" (click)="toggleCollapse()">
+      <i class="fa fa-thin fa-bars"></i>
+    </button>
+    <button class="btn-close"*ngIf="collapsed" (click)="closeSideNava()">
+      <i class="fa fa-times close-icon"></i>
+    </button>
+  </div>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]">
+        <i class="sidenav-link-icon" [class]="data.icon"></i>
+        <span class="sidenav-link-text" *ngIf="collapsed" >{{data.label}}</span>
+      </a>
+    </li>
+  </ul>
+</div>

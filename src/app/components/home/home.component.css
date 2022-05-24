@@ -1,41 +1,22 @@
-#section-inicio{
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
 .contenedor-inicio{
+  background: #17181c;
   width: 100%;
-  height: 71.5vh;
-  margin-top: 30%;
-  margin-left: 50%;
-  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
-.hgroup{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20%;
-  width: 100%;
-}
-
-main{
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-#seccion-incio h1{
-  color: #ff637d;
+.contenedor-inicio h1{
+  color: #87e1c7;
   font-size: 120px;
   font-weight: bold;
-
 }
 
-#seccion-incio h3{
+.contenedor-inicio h3{
   font-size: 30px;
-  color: rgb(119, 118, 118);
-  display: block;
+  color: #eaebed;
 }
 
 .header-wave{

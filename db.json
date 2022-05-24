@@ -21,5 +21,22 @@
       "gitHub": "../../../assets/git.svg",
       "visualStudioCode": "../../../assets/visual-studio-code-1.svg"
     }
+  ],
+  "portfolio": [
+    {
+      "src": "../../../assets/Gomeria2000.png",
+      "title": "Gomería 2000",
+      "text": "Aplicación web SPA, realizada con Javascript vanilla, html y css"
+    },
+    {
+      "src": "../../../assets/AppWork.png",
+      "title": "App Work",
+      "text": "Aplicación realizada con el framework Vue"
+    },
+    {
+      "src": "../../../assets/WeatherApp.png",
+      "title": "Wheater App",
+      "text": "Aplicación realizada con JavaScript vanilla, utilizando Fetch hacía una API Rest"
+    }
   ]
 }

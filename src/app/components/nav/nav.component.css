@@ -5,7 +5,7 @@
   z-index: 1;
   top:0;
   height: 100vh;
-  box-shadow: 0.63rem 0 1.25rem rgb(77, 77, 77);
+  box-shadow: 0.63rem 0 1.25rem rgba(62, 62, 62, 0.584);
 }
 
 .button-container{
@@ -36,7 +36,7 @@
 }
 
 .fa-times,
-  .fa-thin{
+  .btn-open{
   color: aliceblue;
   font-size: 24px;
 }
@@ -73,16 +73,12 @@
   min-width: 2rem;
   margin: 0 0.5rem;
   text-align: center;
-  background-color: transparent;
 }
 .sidenav-link-text{
   margin-left: 1.5rem;
   background-color: transparent;
 }
-
-.sidenav-nav-item:hover,
-  .sidenav-nav-link:hover,
-    .sidenav-link-icon:hover{
+.sidenav-nav-link:hover{
   background-color: #f3f3f3;
   color: #000;
   border-radius: 0.625rem;

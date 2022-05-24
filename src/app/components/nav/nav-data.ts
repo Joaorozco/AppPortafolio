@@ -6,17 +6,17 @@ export const navbarData = [
   },
   {
     routeLink:'sobre-mi',
-    icon:'fa fa-thin fa-address-card',
+    icon:'fa fa-address-card',
     label: 'Sobre Mi'
   },
   {
     routeLink:'educacion',
-    icon:'fa fa-thin fa-graduation-cap',
+    icon:'fa fa-graduation-cap',
     label: 'Estudios y Certificaciones'
   },
   {
     routeLink:'portafolios',
-    icon:'fa fa-thin fa-briefcase',
+    icon:'fa fa-briefcase',
     label: 'Portfolio'
   },
   {

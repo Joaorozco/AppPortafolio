@@ -13,15 +13,41 @@
   ],
   "skills": [
     {
-      "html": "../../../assets/html5.svg",
-      "javascript":"../../../assets/javascript.svg",
-      "css": "../../../assets/css3.svg",
-      "bootstrap":"../../../assets/bootstrap-5-1.svg",
-      "angular":"../../../assets/angular.svg",
-      "gitHub": "../../../assets/git.svg",
-      "visualStudioCode": "../../../assets/visual-studio-code-1.svg"
+      "title": "Skills"
+    },
+    {
+      "titulo": "Desarrollo",
+      "img":
+      [
+        {
+          "html": "../../../assets/html5.svg",
+          "javascript":"../../../assets/javascript.svg",
+          "css": "../../../assets/css3.svg"
+        }
+      ]
+    },
+    {
+      "titulo":"Framework",
+      "img":
+      [
+        {
+          "bootstrap":"../../../assets/bootstrap-5-1.svg",
+          "angular":"../../../assets/angular.svg"
+        }
+      ]
+    },
+    {
+      "titulo":"Tools",
+      "img":
+      [
+        {
+          "gitHub": "../../../assets/git.svg",
+          "visualStudioCode": "../../../assets/visual-studio-code-1.svg"
+        }
+      ]
     }
-  ],
+    ],
+
   "portfolio": [
     {
       "src": "../../../assets/Gomeria2000.png",
@@ -30,7 +56,7 @@
     },
     {
       "src": "../../../assets/AppWork.png",
-      "title": "App Work",
+      "title": "TODO List",
       "text": "Aplicación realizada con el framework Vue"
     },
     {

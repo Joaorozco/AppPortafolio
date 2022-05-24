@@ -1,13 +1,13 @@
-<div id="section-sobre-mi">
+<div id="section-sobre-mi" *ngFor="let dataMy of sobreMi">
   <h1 class="text-center" id="titulo-sobre-mi">Sobre mí</h1>
   <app-button-edit>
   </app-button-edit>
   <div class="container-sobre-mi">
     <div class="img-perfil">
-      <img src="../../../assets/perfil-cv.jpg">
+      <img [src]="dataMy.file">
     </div>
     <p class="text-center">
-      {{sobreMi.description}}
+      {{dataMy.description}}
     </p>
   </div>
   <a
@@ -17,41 +17,17 @@
     class="btn btn-danger">
     {{buttonDowload}}
   </a>
-    <div id="section-skills">
-      <h1 class="text-center">Skills</h1>
-      <div id="container-skills">
-      <dl>
-        <dt>Desarrollo:</dt>
-        <dd>
-          <img
-              class="svg-skill"
-              [src]="skills[0]">
-            <img
-              class="svg-skill"
-              [src]="sobreMi.skills.javascript">
-              <img
-              class="svg-skill"
-              [src]="sobreMi.skills.css">
-            </dd>
-        <dt>Framework:</dt>
-        <dd>
-          <img
-              class="svg-skill"
-              [src]="sobreMi.skills.bootstrap">
-          <img
-              class="svg-skill"
-              [src]="sobreMi.skills.angular">
-            </dd>
-            <dt>Tools:</dt>
-            <dd>
-          <img
-              class="svg-skill"
-              [src]="sobreMi.skills.gitHub">
-              <img
-              class="svg-skill"
-              [src]="sobreMi.skills.visualStudioCode">
-            </dd>
-      </dl>
-    </div>
+<div id="section-skills" *ngFor="let data of skills">
+      <h1 class="text-center">{{data.title}}</h1>
+  <div id="container-skills" *ngFor="let i of data.img" >
+    <dl>
+      <dt>{{data.titulo}}</dt>
+      <dd >
+        <img 
+            class="svg-skill"
+            [src]="data.img[i]"
+            alt="SVG-Skill">
+      </dd>
+    </dl>
   </div>
 </div>

@@ -1,18 +1,31 @@
-<form class="container-form">
-  <div class="form">
-    <div class="form-control">
-      <span>Nombre:</span>
-      <input type="text">
-    </div>
-
-    <div class="form-control">
-      <span>Email:</span>
-      <input type="email">
-    </div>
-
-    <div class="form-control">
-      <span>Contraseña:</span>
-      <input type="password">
-    </div>
+<div class="container-form">
+  <div class="formulario-contenedor">
+    <form [formGroup]="formulario"  class="form" >
+      <h1>
+        Iniciar Sesión
+      </h1>
+      <div>
+        <label for="email">Email:</label>
+        <input
+          [class.is-invalid]="formulario.get('username') "
+          class="form-control"
+          type="text"
+          id="email"
+          formControlName="username"
+          >
+      </div>
+      <div>
+        <label for="email">Password:</label>
+        <input
+        [class.is-invalid]="formulario.get('password')"
+        class="form-control"
+        type="password"
+        formControlName="password">
+      </div>
+      <div class="btn-send">
+        <button>Enviar</button>
+      </div>
+    </form>
   </div>
-</form>
+</div>
+

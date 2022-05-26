@@ -9,14 +9,17 @@
 }
 
 .contenedor-inicio h1{
+  width: 100%;
   color: #87e1c7;
-  font-size: 120px;
+  font-size: 7rem;
+  line-height: 1;
   font-weight: bold;
 }
 
 .contenedor-inicio h3{
-  font-size: 30px;
+  font-size: 2rem;
   color: #eaebed;
+  padding-top: 5rem;
 }
 
 .header-wave{

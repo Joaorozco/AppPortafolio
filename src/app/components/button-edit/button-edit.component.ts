@@ -1,7 +1,5 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
-import { Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,  Validators } from '@angular/forms';
-import { DataSobreMi } from 'src/app/DataSobreMi';
 import { ButtonEditService } from 'src/app/service/button-edit.service';
 
 
@@ -11,8 +9,6 @@ import { ButtonEditService } from 'src/app/service/button-edit.service';
   styleUrls: ['./button-edit.component.css']
 })
 export class ButtonEditComponent implements OnInit {
-  @Output() sendDataSobreMi: EventEmitter<DataSobreMi> = new EventEmitter;
-  dataSobreMi: any;
 
   constructor(
     private buttonEditService:ButtonEditService
@@ -25,13 +21,13 @@ export class ButtonEditComponent implements OnInit {
   profileForm = new FormGroup({
     file : new FormControl('', [Validators.required]),
     description : new FormControl('', [Validators.required]),
-    skill : new FormControl('', [Validators.required])
   });
 
-  onSubmit() {
-    console.log(this.profileForm.value);
+  public onSubmit():any{
+    this.buttonEditService.put('http://localhost:5000/sobreMi',
+    this.profileForm.value)
+    .subscribe()
 
-    this.sendDataSobreMi.emit(this.profileForm.value);
   };
 
 

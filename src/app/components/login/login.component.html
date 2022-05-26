@@ -1,13 +1,14 @@
 <div class="container-form">
-  <div class="formulario-contenedor">
-    <form [formGroup]="formulario"  class="form" >
+    <form [formGroup]="formulario"
+          class="form"
+          (submit)="send()"
+     >
       <h1>
         Iniciar Sesión
       </h1>
       <div>
         <label for="email">Email:</label>
         <input
-          [class.is-invalid]="formulario.get('username') "
           class="form-control"
           type="text"
           id="email"
@@ -17,15 +18,20 @@
       <div>
         <label for="email">Password:</label>
         <input
-        [class.is-invalid]="formulario.get('password')"
         class="form-control"
         type="password"
-        formControlName="password">
+        formControlName="password"
+        >
       </div>
       <div class="btn-send">
-        <button>Enviar</button>
+        <button [disabled]="formulario.invalid">Enviar</button>
+      </div>
+      <div class="container-validacion">
+        <p>Esta seccion es exclusivo para el desarrollador haz click
+          <a href="">aquí</a>
+          para volver
+        </p>
       </div>
     </form>
-  </div>
 </div>
 

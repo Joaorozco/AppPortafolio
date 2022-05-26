@@ -1,7 +1,9 @@
 <div class="btn-edit">
-  <button type="button" class="btn btn-dark btn-edit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
-    <img id="svg-pen" src="../../../assets/mode_edit_white_24dp.svg">
-  </button>
+  <a routerLink="/edit">
+    <button type="button" class="btn btn-dark btn-edit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
+      <img id="svg-pen" src="../../../assets/mode_edit_white_24dp.svg">
+    </button>
+  </a>
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -14,7 +16,8 @@
         <h3 class="bg-light">Sobre mi</h3>
         <form class="bg-light"
           [formGroup]="profileForm"
-        >
+          (submit)="onSubmit()"
+          >
           <label for="message-text d-block" class="col-form-label bg-light">Foto identificación:</label>
           <div class="input-group mb-3 bg-light">
             <input
@@ -26,18 +29,11 @@
           </div>
           <div class="mb-3 bg-light">
             <label for="message-text" class="col-form-label bg-light">Descripción:</label>
-            <input type="text"
-            class="form-control"
-            id="message-text"
-            formControlName="description"
-            >
-          </div>
-          <label for="message-text d-block" class="col-form-label bg-light">Skills:</label>
-          <div class="input-group mb-3">
-            <input type="file"
-            class="form-control"
-            id="inputGroupFile01"
-            formControlName="skill"
+            <input
+              type="text"
+              class="form-control"
+              id="message-text"
+              formControlName="description"
             >
           </div>
 
@@ -45,7 +41,7 @@
       </div>
       <div class="modal-footer bg-light">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-        <button type="submit" (click)="onSubmit()">Guardar cambios</button>
+        <button [disabled]="profileForm.invalid">Guardar cambios</button>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@
   width: 500px;
   height: auto;
   border: 1px solid #87e1c7;
-  padding: 50px;
+  padding: 50px 50px 0 50px;
   border-radius: 6px;
 }
 .form h1{
@@ -44,4 +44,30 @@
   font-weight: bold;
   font-size: 25px;
   border: 1px solid #87e1c7;
+  cursor: pointer;
+}
+.btn-send button:hover{
+  background-color: #87e1c7;
+  transition: all .3s ease-in-out;
+  color: #000;
+}
+
+.container-validacion{
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+}
+.container-validacion p{
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+}
+.container-validacion a{
+  color: #87e1c7;
+}
+.container-validacion a:hover{
+  color: rgb(230, 20, 62);
+  transition: all .3s ease;
 }

@@ -1,47 +1,42 @@
 {
-	"home": [
+  "home": [
     {
-    "name": "Joaquín Orozco",
-	  "puesto": "Front end Developer"
+      "name": "Joaquín Orozco",
+      "puesto": "Front end Developer"
     }
   ],
-  "sobreMi": [
+  "sobreMi":
     {
-    "file": "../../../assets/perfil-cv.jpg",
-    "description": "Como va? me llamo Joaquín Orozco, tengo 22 años, soy de San Gregorio, Santa fe, Argentina. Creo, desarrollo, actualizo y mantengo páginas y portales web. Sigo aprendiendo y adquiriendo nuevas habilidades día a día en función a las actuales y futuras demandas y tendencias tecnológicas en el campo de desarrollo de aplicaciones web. Me apaciona el mundo de la programación y ofrezco en cada proyecto total atención y dedicación."
-    }
-  ],
+      "file": "../../../assets/perfil-cv.jpg",
+      "description": "Como va? me llamo Joaquín Orozco, tengo 22 años, soy de San Gregorio, Santa fe, Argentina. Creo, desarrollo, actualizo y mantengo páginas y portales web. Sigo aprendiendo y adquiriendo nuevas habilidades día a día en función a las actuales y futuras demandas y tendencias tecnológicas en el campo de desarrollo de aplicaciones web. Me apaciona el mundo de la programación y ofrezco en cada proyecto total atención y dedicación."
+    },
   "skills": [
     {
       "title": "Skills"
     },
     {
       "titulo": "Desarrollo:",
-      "img":
-      [
+      "img": [
         "../../../assets/html5.svg",
         "../../../assets/javascript.svg",
         "../../../assets/css3.svg"
       ]
     },
     {
-      "titulo":"Framework:",
-      "img":
-      [
+      "titulo": "Framework:",
+      "img": [
         "../../../assets/bootstrap-5-1.svg",
         "../../../assets/angular.svg"
       ]
     },
     {
-      "titulo":"Tools:",
-      "img":
-      [
+      "titulo": "Tools:",
+      "img": [
         "../../../assets/git.svg",
         "../../../assets/visual-studio-code-1.svg"
       ]
     }
-    ],
-
+  ],
   "portfolio": [
     {
       "src": "../../../assets/Gomeria2000.png",
@@ -63,5 +58,9 @@
       "title": "Task App",
       "text": "Aplicación desarrollada con Angular y JSON Server"
     }
-  ]
+  ],
+  "login": {
+    "username": "joaquinalexisorozco@gmail.com",
+    "password": "sdsvdewg43g"
+  }
 }

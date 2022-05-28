@@ -1,22 +1,24 @@
 <div id="section-sobre-mi" *ngFor="let dataMy of sobreMi">
   <h1 class="text-center" id="titulo-sobre-mi">Sobre mí</h1>
-  <app-button-edit>
-  </app-button-edit>
   <div class="container-sobre-mi">
     <div class="img-perfil">
+      <app-btn-edit-perfil>
+      </app-btn-edit-perfil>
       <img [src]="dataMy.file">
     </div>
     <p class="text-center">
       {{dataMy.description}}
     </p>
   </div>
-  <a
-    href="../../../assets/ALexis Joaquin Orozco-CV.pdf"
-    download="AlexisJoaquinOrozco-CV"
-    id="dowload-cv"
-    class="btn btn-danger">
-    {{buttonDowload}}
-  </a>
+  <div class="container-btn-dowload">
+    <a
+      href="../../../assets/ALexis Joaquin Orozco-CV.pdf"
+      download="AlexisJoaquinOrozco-CV"
+      id="dowload-cv"
+      class="btn btn-danger">
+      {{buttonDowload}}
+    </a>
+  </div>
 <div id="section-skills" *ngFor="let data of skills">
       <h1 class="text-center">{{data.title}}</h1>
       <h2>{{data.titulo}}</h2>

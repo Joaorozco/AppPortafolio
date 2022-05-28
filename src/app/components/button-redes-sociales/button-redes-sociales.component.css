@@ -34,7 +34,7 @@
   text-align: center;
 }
 .container-redes i:hover{
-  color: #87e1c7;
+  color:  #0e76a8;
   transition: all .5s ease;
   transform: scale(1.2);
   transform: rotateX(360deg);

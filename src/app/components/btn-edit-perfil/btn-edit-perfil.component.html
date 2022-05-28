@@ -1,0 +1,20 @@
+<div class="btn-edit" (click)="openEditor()" >
+  <i class="fa fa-pencil-square" aria-hidden="true"></i>
+</div>
+<div class="container-editor" [ngClass]="toolEditor ? 'display': ''">
+  <div class="tool-editor">
+    <div class="btn-edit-close" (click)="closeEditor()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <input type="file" id="file">
+    <label for="file">
+      <i class="fa fa-upload" aria-hidden="true"></i>
+      Elja una imagen
+    </label>
+    <div class="btn-cambios">
+      <button>
+        <span>Guardar cambios</span>
+      </button>
+    </div>
+  </div>
+</div>

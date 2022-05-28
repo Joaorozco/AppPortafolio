@@ -42,7 +42,7 @@
   transition: all .3s ease-in-out;
 }
 
-.fa-times,
+.close-icon,
   .btn-open{
   color: aliceblue;
   font-size: 24px;

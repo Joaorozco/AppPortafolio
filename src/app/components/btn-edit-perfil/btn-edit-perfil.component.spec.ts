@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonEditComponent } from './button-edit.component';
+import { BtnEditPerfilComponent } from './btn-edit-perfil.component';
 
-describe('ButtonEditComponent', () => {
-  let component: ButtonEditComponent;
-  let fixture: ComponentFixture<ButtonEditComponent>;
+describe('BtnEditPerfilComponent', () => {
+  let component: BtnEditPerfilComponent;
+  let fixture: ComponentFixture<BtnEditPerfilComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ButtonEditComponent ]
+      declarations: [ BtnEditPerfilComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonEditComponent);
+    fixture = TestBed.createComponent(BtnEditPerfilComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

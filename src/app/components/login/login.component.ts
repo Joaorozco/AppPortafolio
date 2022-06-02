@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   });
 
   public send():any{
-    this.restApi.put('http://localhost:5000/login',
+    this.restApi.post('http://localhost:5000/login',
     this.formulario.value)
     .subscribe((res: any) => {
       console.log('Login exitoso');

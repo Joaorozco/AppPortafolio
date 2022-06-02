@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class EditorService {
 
   constructor(
     private http: HttpClient
   ) { }
 
-  public post(url:string, body:any){
-    return this.http.post(url, body);
+  public postImg(url:string, body:void){
+    return this.http.put(url, body)
   }
 }

@@ -6,15 +6,18 @@
     <div class="btn-edit-close" (click)="closeEditor()">
         <i class="fa fa-times" aria-hidden="true"></i>
     </div>
-    <input type="file" id="file">
-    <label for="file">
-      <i class="fa fa-upload" aria-hidden="true"></i>
-      Elja una imagen
-    </label>
-    <div class="btn-cambios">
-      <button>
-        <span>Guardar cambios</span>
-      </button>
-    </div>
+
+    <form [formGroup]="file"  (submit)="sendImg()">
+      <label for="file">
+        <i class="fa fa-upload" aria-hidden="true"></i>
+        Elja una imagen
+      </label>
+      <input formControlName="imgPerfil" (change)="capturandoFile($event)" type="file" id="file">
+      <div class="btn-cambios">
+        <button type="submit">
+          <span>Guardar cambios</span>
+        </button>
+      </div>
+    </form>
   </div>
 </div>

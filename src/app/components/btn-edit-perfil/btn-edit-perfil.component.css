@@ -82,6 +82,7 @@ label i{
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  margin-top: 2rem;
 }
 
 button {

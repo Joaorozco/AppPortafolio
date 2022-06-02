@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path:"sobre-mi",
-    component: SobreMiComponent,
+    component: SobreMiComponent
   },
   {
     path:"educacion",

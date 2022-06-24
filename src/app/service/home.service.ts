@@ -6,11 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HomeService {
-  private apiUrl = 'http://localhost:5000/home';
+  private apiUrl = 'http://localhost:8080/usuario';
 
   constructor(private http: HttpClient ) { }
 
   obtenerDato(): Observable<any>{
+    console.log("corriendo")
     return this.http.get(this.apiUrl);
   }
 }

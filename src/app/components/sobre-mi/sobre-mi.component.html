@@ -20,9 +20,10 @@
     </a>
   </div>
 <div id="section-skills" *ngFor="let data of skills">
-      <h1 class="text-center">{{data.title}}</h1>
-      <h2>{{data.titulo}}</h2>
-  <div id="container-skills"  >
+        <h1 class="text-center">{{data.title}}</h1>
+        <app-btn-edit-skill>
+        </app-btn-edit-skill>
+  <div id="container-skills">
     <dl>
       <dd>
         <img *ngFor="let src of data.img"

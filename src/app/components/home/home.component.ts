@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosHome.obtenerDato().subscribe(data => {
-      this.miHome = data[0];
+      this.miHome = data;
       console.log(data);
     });
   };

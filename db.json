@@ -5,35 +5,19 @@
       "puesto": "Front end Developer"
     }
   ],
-  "sobreMi":
-
-    {
-      "imgPerfil": "../../../assets/perfil-cv.jpg",
-      "description": "Como va? me llamo Joaquín Orozco, tengo 22 años, soy de San Gregorio, Santa fe, Argentina. Creo, desarrollo, actualizo y mantengo páginas y portales web. Sigo aprendiendo y adquiriendo nuevas habilidades día a día en función a las actuales y futuras demandas y tendencias tecnológicas en el campo de desarrollo de aplicaciones web. Me apaciona el mundo de la programación y ofrezco en cada proyecto total atención y dedicación."
-    }
-  ,
+  "sobreMi": {
+    "imgPerfil": "../../../assets/perfil-cv.jpg",
+    "description": "Soy Joaquin Orozco"
+  },
   "skills": [
     {
-      "title": "Skills"
-    },
-    {
-      "titulo": "Desarrollo:",
+      "title": "Skills",
       "img": [
         "../../../assets/html5.svg",
         "../../../assets/javascript.svg",
-        "../../../assets/css3.svg"
-      ]
-    },
-    {
-      "titulo": "Framework:",
-      "img": [
+        "../../../assets/css3.svg",
         "../../../assets/bootstrap-5-1.svg",
-        "../../../assets/angular.svg"
-      ]
-    },
-    {
-      "titulo": "Tools:",
-      "img": [
+        "../../../assets/angular.svg",
         "../../../assets/git.svg",
         "../../../assets/visual-studio-code-1.svg"
       ]

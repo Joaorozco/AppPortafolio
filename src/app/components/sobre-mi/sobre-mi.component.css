@@ -3,49 +3,42 @@
   flex-direction: column;
   justify-content: center;
   background-color: #17181c;
+  height: 100%;
 }
-
 #container-sobre-mi{
   width: auto;
 }
-
 #mode-edit{
   display: flex;
   justify-content:flex-end;
   margin: 0;
   margin-right: 25%;
 }
-
 #svg-pen{
   width: 25px;
   height: 25px;
   cursor: pointer;
 }
-
 #section-sobre-mi h1{
   color: #87e1c7;
   font-size: 40px;
   font-weight: bold;
   padding-top: 50px;
 }
-
 #section-sobre-mi h3{
   color: #fff;
   font-weight: bold;
 }
-
 .img-perfil{
   display: flex;
   justify-content: center;
 
 }
-
 .img-perfil img{
   width: 20%;
   border-radius: 40px;
   object-fit: cover;
 }
-
 #section-sobre-mi p{
   width: 60%;
 
@@ -60,12 +53,10 @@
   margin-right: auto;
   display: block;
 }
-
 .container-btn-dowload{
   display: flex;
   justify-content: space-around;
 }
-
 #dowload-cv{
   --color: #5e4dab;
  padding: 0.8em 1.7em;
@@ -95,67 +86,59 @@
   background-color: var(--color);
   transition: 1s ease;
  }
-
  #dowload-cv::before {
   top: -1em;
   left: -1em;
  }
-
  #dowload-cv::after {
   left: calc(100% + 1em);
   top: calc(100% + 1em);
  }
-
  #dowload-cv:hover::before, #dowload-cv:hover::after {
   height: 410px;
   width: 410px;
  }
-
  #dowload-cv:hover {
   color: rgb(10, 25, 30);
  }
-
  #dowload-cv:active {
   filter: brightness(.8);
  }
-
-#section-kills{
+  #section-kills{
   position: relative;
   background-color: #17181c;
-}
-
-#section-skills h1{
-  font-size: 40px;
-  font-weight: bold;
-  color: #87e1c7;
-  padding-top: 50px;
-}
-
-#section-skills h2{
-  color: #fff;
-  margin-left: 16.5625rem;
-}
-
-#container-skills{
-  padding-top: 10px;
-  width: 60%;
-  margin-left: 16.5625rem;
-  display: grid;
-  grid-template-columns: (4,1fr);
-  grid-template-rows: repeat(1, 1fr);
-}
-
-#section-skills dt{
-  font-size: 20px;
-  padding: 10px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.svg-skill{
-  width: 80px;
-  height: 80px;
-}
+  }
+  #section-skills h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: #87e1c7;
+    padding-top: 50px;
+  }
+  #section-skills h2{
+    color: #fff;
+    margin-left: 16.5625rem;
+  }
+  #container-skills{
+    padding-top: 10px;
+    width: 60%;
+    margin-left: 16.5625rem;
+    display: flex;
+    justify-content: center;
+  }
+  #section-skills dt{
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .svg-skill{
+    width: 80px;
+    height: 80px;
+  }
+  .svg-skill:hover{
+    transform: scale(1.2);
+    transition: all ease .2s;
+  }
 
 
 

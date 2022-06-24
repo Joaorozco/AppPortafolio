@@ -1,4 +1,4 @@
-<a>
+<a class="btn-edit">
   <div class="btn-edit" (click)="openEditor()" >
     <i class="fa fa-pencil-square" aria-hidden="true"></i>
   </div>
@@ -16,10 +16,6 @@
         Elja una imagen
       </label>
       <input formControlName="imgPerfil" (onFileChanged)="capturandoFile($event)" type="file" id="file">
-      <div class="mb-3">
-        <h3 class="text-light pt-4">Descripcion:</h3>
-        <textarea class="form-control" id="exmpleFormControlTextarea1" rows="3"></textarea>
-      </div>
       <div class="btn-cambios">
         <button type="submit">
           <span>Guardar cambios</span>
@@ -28,3 +24,4 @@
     </form>
   </div>
 </div>
+

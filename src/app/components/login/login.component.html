@@ -1,5 +1,5 @@
 <div class="container-form">
-    <form [formGroup]="formulario"
+    <form [formGroup]="form"
           class="form"
           (submit)="send()"
      >
@@ -13,7 +13,17 @@
           type="text"
           id="email"
           formControlName="username"
+          [ngClass]="{'is-invalid' : Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}"
           >
+        <div *ngIf="Username?.errors && Username?.touched">
+          <p *ngIf="Username?.hasError('required')" class="text-danger">
+            El email es requerido.
+          </p>
+          <p *ngIf="Username?.hasError('email')" class="text-danger">
+            El formato email debe de válido.
+          </p>
+        </div>
+
       </div>
       <div>
         <label for="email">Password:</label>
@@ -21,10 +31,19 @@
         class="form-control"
         type="password"
         formControlName="password"
+        [ngClass]="{'is-invalid' : Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
         >
+      <div *ngIf="Password?.errors && Password?.touched">
+         <p *ngIf="Password?.hasError('required')" class="text-danger">
+          La contraseña es requerida
+        </p>
+        <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+          La contraseña debe tener 8 o más carácteres
+        </p>
+      </div>
       </div>
       <div class="btn-send">
-        <button [disabled]="formulario.invalid">Enviar</button>
+        <button [disabled]="form.invalid">Enviar</button>
       </div>
       <div class="container-validacion">
         <p>Esta seccion es exclusivo para el desarrollador haz click

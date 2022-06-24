@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { EditorService } from 'src/app/service/editor.service';
 
 @Component({
-  selector: 'app-btn-edit-perfil',
-  templateUrl: './btn-edit-perfil.component.html',
-  styleUrls: ['./btn-edit-perfil.component.css']
+  selector: 'app-btn-edit-skill',
+  templateUrl: './btn-edit-skill.component.html',
+  styleUrls: ['./btn-edit-skill.component.css']
 })
-export class BtnEditPerfilComponent implements OnInit {
+export class BtnEditSkillComponent implements OnInit {
   toolEditor = false;
 
   constructor(
@@ -32,7 +31,7 @@ export class BtnEditPerfilComponent implements OnInit {
   })
 
   public sendImg():void {
-    this.restApi.postImg('http://localhost:5000/sobreMi',
+    this.restApi.postImg('http://localhost:5000/skills',
     this.file.value)
     .subscribe(data => {
       console.log(data);
@@ -42,4 +41,6 @@ export class BtnEditPerfilComponent implements OnInit {
   capturandoFile(event:any) {
     console.log(event)
   }
+
+
 }

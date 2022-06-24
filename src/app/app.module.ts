@@ -19,6 +19,7 @@ import { ButtonRedesSocialesComponent } from './components/button-redes-sociales
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BtnEditPerfilComponent } from './components/btn-edit-perfil/btn-edit-perfil.component';
+import { BtnEditSkillComponent } from './components/btn-edit-skill/btn-edit-skill.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BtnEditPerfilComponent } from './components/btn-edit-perfil/btn-edit-pe
     LoginComponent,
     ButtonRedesSocialesComponent,
     BtnEditPerfilComponent,
+    BtnEditSkillComponent,
   ],
   imports: [
     BrowserModule,

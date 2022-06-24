@@ -8,6 +8,7 @@ import { EstudiosComponent } from './components/estudios/estudios.component';
 import { PortafoliosComponent } from './components/portafolios/portafolios.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { LoginComponent } from './components/login/login.component';
+import { BtnEditPerfilComponent } from './components/btn-edit-perfil/btn-edit-perfil.component';
 import { VigilanteGuard } from './guards/vigilante.guard';
 
 const routes: Routes = [
@@ -22,6 +23,12 @@ const routes: Routes = [
   {
     path:"sobre-mi",
     component: SobreMiComponent
+  },
+  {
+
+    path: "sobre-mi/edit",
+    component: BtnEditPerfilComponent,
+    canActivate: [VigilanteGuard]
   },
   {
     path:"educacion",

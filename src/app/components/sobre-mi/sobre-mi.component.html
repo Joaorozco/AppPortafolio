@@ -1,13 +1,13 @@
-<div id="section-sobre-mi" >
+<div id="section-sobre-mi" *ngFor="let a of sobreMi">
   <h1 class="text-center" id="titulo-sobre-mi">Sobre mí</h1>
   <div class="container-sobre-mi">
     <div class="img-perfil">
       <app-btn-edit-perfil>
       </app-btn-edit-perfil>
-      <img [src]="sobreMi.imgPerfil">
+      <img alt="Perfil image" [src]="sobreMi.imgPerfil">
     </div>
     <p class="text-center">
-      {{sobreMi.description}}
+      {{a.descripcion}}
     </p>
   </div>
   <div class="container-btn-dowload">
@@ -21,8 +21,6 @@
   </div>
 <div id="section-skills" *ngFor="let data of skills">
         <h1 class="text-center">{{data.title}}</h1>
-        <app-btn-edit-skill>
-        </app-btn-edit-skill>
   <div id="container-skills">
     <dl>
       <dd>

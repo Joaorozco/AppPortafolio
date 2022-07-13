@@ -25,7 +25,7 @@
 }
 .tool-editor{
   width: 50%;
-  height: 25rem;
+  height: auto;
   background-color: transparent;
   display: flex;
   flex-direction: column;

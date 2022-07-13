@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtnEditSkillComponent } from './btn-edit-skill.component';
+import { PortfolioComponent } from './portfolio.component';
 
-describe('BtnEditSkillComponent', () => {
-  let component: BtnEditSkillComponent;
-  let fixture: ComponentFixture<BtnEditSkillComponent>;
+describe('PortfolioComponent', () => {
+  let component: PortfolioComponent;
+  let fixture: ComponentFixture<PortfolioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BtnEditSkillComponent ]
+      declarations: [ PortfolioComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtnEditSkillComponent);
+    fixture = TestBed.createComponent(PortfolioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,28 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-
-import { LoginService } from 'src/app/service/login.service';
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-registrar',
+  templateUrl: './registrar.component.html',
+  styleUrls: ['./registrar.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegistrarComponent implements OnInit {
   ngOnInit(): void {
   }
-
-
   form: FormGroup
   constructor(
-    private restApi: LoginService,
+    private restApi: UsuarioService,
     private cookieService: CookieService,
     private formBuilder: FormBuilder
   ) {
     this.form =  this.formBuilder.group(
       {
         username: new FormControl('',
+          [
+            Validators.required
+          ]
+        ),
+        useremail: new FormControl('',
           [
             Validators.required,
             Validators.email
@@ -47,18 +49,15 @@ export class LoginComponent implements OnInit {
   }
 
   get Password(){
-    return this.form.get('password');
+    return this.form.get('password')
   }
 
 
-
-  public send():any{
+  public sendDataRegister(){
     this.restApi.post('http://localhost:5000/login',
     this.form.value)
     .subscribe((res: any) => {
       console.log('Login exitoso');
-      this.cookieService.set('token_access', res.accessToken, 4, '/');
     })
   }
-
 }

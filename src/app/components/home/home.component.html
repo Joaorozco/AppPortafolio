@@ -1,6 +1,6 @@
 <div class="contenedor-inicio" *ngFor="let a of miHome">
-  <h1 class="text-center" id="titulo-inicio">{{a.nombre}}</h1>
-  <h3 class="text-center">{{a.descripcion}}</h3>
+  <h1 class="text-center" id="titulo-inicio">{{a.nombre + ' ' + a.apellido}}</h1>
+  <h3 class="text-center">{{a.profesion}}</h3>
   <div class="header-wave" style="height: 150px; overflow: hidden;" >
     <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
       <path d="M0.00,49.99 C150.00,150.00 349.20,-49.99 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #87e1c711;box-shadow: -5px 10px 10px #fff">

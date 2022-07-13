@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SobreMiService {
-  private apiURl = 'http://localhost:5000/sobreMi';
+  private apiURl = 'http://localhost:8080/usuario';
   private apiskillsUrl = 'http://localhost:5000/skills'
 
   constructor(

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SobreMiService } from 'src/app/service/sobre-mi.service';
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -12,16 +12,16 @@ export class SobreMiComponent implements OnInit {
   skills:any;
 
   constructor(
-    private datos: SobreMiService
+    private datos: UsuarioService
   ) { }
 
   ngOnInit(): void {
-    this.datos.obtenerDatosSobreMi().subscribe(data => {
+    this.datos.obtenerDato().subscribe(data => {
       console.log(data);
       this.sobreMi = data;
     })
 
-    this.datos.obtenerDatosSkills().subscribe(data => {
+    this.datos.obtenerDato().subscribe(data => {
       console.log(data);
       this.skills = data;
     })

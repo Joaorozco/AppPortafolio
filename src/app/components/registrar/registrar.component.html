@@ -1,0 +1,72 @@
+<div class="container-form">
+  <form [formGroup]="form"
+        class="form"
+        (submit)="sendDataRegister()"
+   >
+    <h1>
+      Crear cuenta
+    </h1>
+    <div>
+      <label for="name">Nombre:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="name"
+        formControlName="username"
+        [ngClass]="{'is-invalid' : Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}"
+        >
+        <div *ngIf="Username?.errors && Username?.touched">
+          <p *ngIf="Username?.hasError('required')" class="text-danger">
+            El nombre es requerido.
+          </p>
+        </div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="email"
+        formControlName="useremail"
+        [ngClass]="{'is-invalid' : Useremail?.errors && Useremail?.touched, 'is-valid': !Useremail?.errors && Useremail?.touched}"
+        >
+      <div *ngIf="Useremail?.errors && Useremail?.touched">
+        <p *ngIf="Useremail?.hasError('required')" class="text-danger">
+          El email es requerido.
+        </p>
+        <p *ngIf="Useremail?.hasError('email')" class="text-danger">
+          El formato email debe de válido.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Password:</label>
+      <input
+      class="form-control"
+      type="password"
+      formControlName="password"
+      [ngClass]="{'is-invalid' : Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
+      >
+    <div *ngIf="Password?.errors && Password?.touched">
+       <p *ngIf="Password?.hasError('required')" class="text-danger">
+        La contraseña es requerida
+      </p>
+      <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+        La contraseña debe tener 8 o más carácteres
+      </p>
+    </div>
+    </div>
+    <div class="btn-send">
+      <button type="submit" [disabled]="form.invalid">Enviar</button>
+    </div>
+    <div class="container-validacion">
+      <p class="text-center">
+        <a routerLink="/login">Login</a>
+      </p>
+    </div>
+  </form>
+</div>
+
+

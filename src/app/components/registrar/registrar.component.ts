@@ -54,10 +54,11 @@ export class RegistrarComponent implements OnInit {
 
 
   public sendDataRegister(){
-    this.restApi.post('http://localhost:5000/login',
-    this.form.value)
-    .subscribe((res: any) => {
-      console.log('Login exitoso');
-    })
+    let requestBody = this.form.value;
+    console.log(JSON.stringify(requestBody));
+    this.restApi.post('http://localhost:8080/api/register', JSON.stringify(requestBody))
+                .subscribe((res: any) => {
+                  console.log('Login exitoso');
+                })
   }
 }

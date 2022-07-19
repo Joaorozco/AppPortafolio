@@ -1,7 +1,7 @@
 <div class="container-form">
     <form [formGroup]="form"
           class="form"
-          (submit)="send()"
+          (ngSubmit)="send($event)"
      >
       <h1>
         Iniciar Sesión
@@ -12,14 +12,14 @@
           class="form-control"
           type="text"
           id="email"
-          formControlName="username"
-          [ngClass]="{'is-invalid' : Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}"
+          formControlName="useremail"
+          [ngClass]="{'is-invalid' : Useremail?.errors && Useremail?.touched, 'is-valid': !Useremail?.errors && Useremail?.touched}"
           >
-        <div *ngIf="Username?.errors && Username?.touched">
-          <p *ngIf="Username?.hasError('required')" class="text-danger">
+        <div *ngIf="Useremail?.errors && Useremail?.touched">
+          <p *ngIf="Useremail?.hasError('required')" class="text-danger">
             El email es requerido.
           </p>
-          <p *ngIf="Username?.hasError('email')" class="text-danger">
+          <p *ngIf="Useremail?.hasError('email')" class="text-danger">
             El formato email debe de válido.
           </p>
         </div>

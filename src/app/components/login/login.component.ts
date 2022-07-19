@@ -1,7 +1,8 @@
+import { HttpStatusCode } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-
 import { LoginService } from 'src/app/service/login.service';
 
 @Component({
@@ -13,16 +14,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  form: FormGroup;
 
-  form: FormGroup
   constructor(
-    private restApi: LoginService,
-    private cookieService: CookieService,
-    private formBuilder: FormBuilder
+    private loginService:LoginService,
+    private formBuilder: FormBuilder,
+    private ruta: Router
   ) {
     this.form =  this.formBuilder.group(
       {
-        username: new FormControl('',
+        useremail: new FormControl('',
           [
             Validators.required,
             Validators.email
@@ -38,10 +39,6 @@ export class LoginComponent implements OnInit {
     )
   }
 
-  get Username(){
-    return this.form.get('username');
-  }
-
   get Useremail(){
     return this.form.get('useremail');
   }
@@ -50,14 +47,11 @@ export class LoginComponent implements OnInit {
     return this.form.get('password');
   }
 
-
-
-  public send():any{
-    this.restApi.post('http://localhost:5000/login',
-    this.form.value)
-    .subscribe((res: any) => {
-      console.log('Login exitoso');
-      this.cookieService.set('token_access', res.accessToken, 4, '/');
+  public send(event: Event){
+    event.preventDefault;
+    this.loginService.post(this.form.value).subscribe(data => {
+      console.log('DATA: ' + JSON.stringify(data));
+      this.ruta.navigate(['/portfolio/home'])
     })
   }
 

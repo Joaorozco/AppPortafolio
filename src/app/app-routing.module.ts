@@ -11,6 +11,7 @@ import { BtnEditPerfilComponent } from './components/btn-edit-perfil/btn-edit-pe
 import { VigilanteGuard } from './guards/vigilante.guard';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { Error404Component } from './components/error404/error404.component';
 
 const routes: Routes = [
 
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path:"login",
     component: LoginComponent,
+  },
+  {
+    path: "error",
+    component: Error404Component
   }
 ];
 

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CookieService } from 'ngx-cookie-service';
 
@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BtnEditPerfilComponent } from './components/btn-edit-perfil/btn-edit-perfil.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { Error404Component } from './components/error404/error404.component';
+import { InterceptorService } from './service/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     BtnEditPerfilComponent,
     RegistrarComponent,
     PortfolioComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [CookieService],
+  providers: [PortfolioComponent,
+  { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

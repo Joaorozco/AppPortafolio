@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,12 +11,10 @@ export class UsuarioService {
   constructor(private http: HttpClient ) { }
 
   obtenerDato(): Observable<any>{
-    console.log("corriendo")
     return this.http.get(this.apiUrl);
   }
 
   public post(url:string, body:any){
-
     return this.http.post(url, body);
   }
 }

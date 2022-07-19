@@ -1,7 +1,5 @@
-import { ResourceLoader } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -57,10 +55,10 @@ export class RegistrarComponent implements OnInit {
 
   public sendDataRegister(){
     let requestBody = this.form.value;
-    console.log(JSON.stringify(requestBody));
+    // let requestBodyJson = JSON.stringify(requestBody);
     this.restApi.post('http://localhost:8080/api/register', requestBody)
                 .subscribe((res: any) => {
-                  console.log('Login exitoso');
+                  console.log('registro exitoso');
                 }) 
     return window.onload;            
   }

@@ -14,8 +14,9 @@ export class LoginService {
   }
 
   public post(body:any):Observable<any>{
-    return this.http.post(this.url, body, {responseType: 'text'}).pipe(map(data => {
-      sessionStorage.setItem('currentUser', JSON.stringify(data))
+    return this.http.post(this.url, body).pipe(map(data => {
+      sessionStorage.setItem('currentUser', JSON.stringify(data));
+      this.currentUserSubject.next(data);
       return data;
     }))
   }

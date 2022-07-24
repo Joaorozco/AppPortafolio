@@ -22,6 +22,7 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { Error404Component } from './components/error404/error404.component';
 import { InterceptorService } from './service/interceptor.service';
+import { PortfolioService } from './service/portfolio.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { InterceptorService } from './service/interceptor.service';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [PortfolioComponent,
+  providers: [PortfolioService,
   { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })

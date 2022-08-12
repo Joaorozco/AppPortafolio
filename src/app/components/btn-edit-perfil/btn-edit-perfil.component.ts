@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
-import { EditorService } from 'src/app/service/editor.service';
 
 @Component({
   selector: 'app-btn-edit-perfil',
@@ -12,7 +11,6 @@ export class BtnEditPerfilComponent implements OnInit {
   toolEditor = false;
 
   constructor(
-    private restApi: EditorService
   ) { }
 
   ngOnInit(): void {
@@ -32,11 +30,11 @@ export class BtnEditPerfilComponent implements OnInit {
   })
 
   public sendImg():void {
-    this.restApi.postImg('http://localhost:5000/sobreMi',
+    /* this.restApi.postImg('http://localhost:5000/sobreMi',
     this.file.value)
-    .subscribe(data => {
+    .subscribe((data:any )=> {
       console.log(data);
-    });
+    }); */
   }
 
   capturandoFile(event:any) {

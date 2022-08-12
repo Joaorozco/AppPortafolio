@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -6,16 +6,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = 'http://localhost:8080/api/usuario';
+  private apiUrl = 'http://localhost:8080/persona/traer';
 
   constructor(private http: HttpClient) { }
-    
+
   obtenerDato(): Observable<any>{
-    return this.http.get(this.apiUrl)
-  }  
+    return this.http.get(this.apiUrl, {responseType: 'text'})
+  }
 
   public post(url:string, body:any){
     return this.http.post(url, body);
   }
 }
- 

@@ -16,40 +16,33 @@ import { Error404Component } from './components/error404/error404.component';
 const routes: Routes = [
 
   { path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
-  { path:"portfolio",
-    component: PortfolioComponent,
-    children : [
-      {
-      path:"home",
-      component: HomeComponent,
-      },
+  {
+    path:"home",
+    component: HomeComponent,
+  },
 
-      {
-        path:"sobre-mi",
-        component: SobreMiComponent
-      },
-      {
-
-        path: "sobre-mi/edit",
-        component: BtnEditPerfilComponent,
-        canActivate: [VigilanteGuard]
-      },
-      {
-        path:"educacion",
-        component: EstudiosComponent,
-      },
-      {
-        path:"portafolios",
-        component: PortafoliosComponent,
-      },
-      {
-        path:"contacto",
-        component: ContactoComponent,
-      },
-    ]
+  {
+    path:"sobre-mi",
+    component: SobreMiComponent
+  },
+  {
+    path: "sobre-mi/edit",
+    component: BtnEditPerfilComponent,
+  },
+  {
+    path:"educacion",
+    component: EstudiosComponent,
+  },
+  {
+    path:"portafolios",
+    component: PortafoliosComponent,
+  },
+  {
+    path:"contacto",
+    component: ContactoComponent,
   },
   {
     path:"registrar",

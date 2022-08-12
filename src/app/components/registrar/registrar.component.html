@@ -12,11 +12,11 @@
         class="form-control"
         type="text"
         id="name"
-        formControlName="username"
-        [ngClass]="{'is-invalid' : Username?.errors && Username?.touched, 'is-valid': !Username?.errors && Username?.touched}"
+        formControlName="nombreUsuario"
+        [ngClass]="{'is-invalid' : NombreUsuario?.errors && NombreUsuario?.touched, 'is-valid': !NombreUsuario?.errors && NombreUsuario?.touched}"
         >
-        <div *ngIf="Username?.errors && Username?.touched">
-          <p *ngIf="Username?.hasError('required')" class="text-danger">
+        <div *ngIf="NombreUsuario?.errors && NombreUsuario?.touched">
+          <p *ngIf="NombreUsuario?.hasError('required')" class="text-danger">
             El nombre es requerido.
           </p>
         </div>
@@ -28,14 +28,14 @@
         class="form-control"
         type="text"
         id="email"
-        formControlName="useremail"
-        [ngClass]="{'is-invalid' : Useremail?.errors && Useremail?.touched, 'is-valid': !Useremail?.errors && Useremail?.touched}"
+        formControlName="email"
+        [ngClass]="{'is-invalid' : Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
         >
-      <div *ngIf="Useremail?.errors && Useremail?.touched">
-        <p *ngIf="Useremail?.hasError('required')" class="text-danger">
+      <div *ngIf="Email?.errors && Email?.touched">
+        <p *ngIf="Email?.hasError('required')" class="text-danger">
           El email es requerido.
         </p>
-        <p *ngIf="Useremail?.hasError('email')" class="text-danger">
+        <p *ngIf="Email?.hasError('email')" class="text-danger">
           El formato email debe de válido.
         </p>
       </div>

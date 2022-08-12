@@ -1,48 +1,73 @@
-import { HttpStatusCode } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
-import { LoginService } from 'src/app/service/login.service';
+import { LoginUsuario } from 'src/app/model/login-usuario';
+import { AuthService } from 'src/app/service/auth.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+
 })
 export class LoginComponent implements OnInit {
-  ngOnInit(): void {
-  }
-
   form: FormGroup;
+  isLogged = false;
+  isLogginFail = false;
+  loginUsuario!: LoginUsuario;
+  nombreUsuario!: string;
+  password!: string;
+  roles: string[] = [];
+  errMsj!: string;
 
   constructor(
-    private loginService:LoginService,
     private formBuilder: FormBuilder,
-    private ruta: Router
+    private router: Router,
+    private tokenService: TokenService,
+    private authService: AuthService
   ) {
-    this.form =  this.formBuilder.group(
+    this.form = this.formBuilder.group(
       {
-        useremail: ['',[Validators.required,Validators.email]],
-        password: ['',[Validators.required,Validators.minLength(8)]],
+        nombreUsuario: ['', [Validators.required]],
+        password: ['', [Validators.required, Validators.minLength(8)]],
       }
     )
   }
 
-  get Useremail(){
-    return this.form.get('useremail');
+  ngOnInit(): void {
+     if (this.tokenService.getToken()) {
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
+  }
+
+  //Getters
+  get NombreUsuario(){
+    return this.form.get('nombreUsuario');
   }
 
   get Password(){
     return this.form.get('password');
   }
 
-  public send(event: Event){
-    event.preventDefault;
-    this.loginService.post(this.form.value).subscribe(data => {
-      console.log('DATA: ' + JSON.stringify(data));
-      this.ruta.navigate(['/portfolio/home'])
+  //Metodos
+  onLogin(): void{
+    this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
+    this.authService.login(this.loginUsuario).subscribe(data => {
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.tokenService.setToken(data.token);
+      this.tokenService.setUsername(data.nombreUsuario)
+      this.tokenService.setAuthorities(data.authorities)
+      this.roles = data.authorities;
+      this.router.navigate(['']);
+    }, err => {
+      this.isLogged = false;
+      this.isLogginFail = true;
+      this.errMsj = err.error.mensaje;
+      console.log(this.errMsj);
     })
   }
-
 }

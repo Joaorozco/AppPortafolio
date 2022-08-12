@@ -8,6 +8,7 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class HomeComponent implements OnInit {
   miHome:any;
+
   constructor(private datosHome: UsuarioService) { }
 
   ngOnInit(): void {
@@ -15,4 +16,6 @@ export class HomeComponent implements OnInit {
       this.miHome = data;
     });
   }
+
+
 }

@@ -1,56 +1,39 @@
 <div class="container-form">
-    <form [formGroup]="form"
-          class="form"
-          (ngSubmit)="send($event)"
-     >
-      <h1>
-        Iniciar Sesión
-      </h1>
-      <div>
-        <label for="email">Email:</label>
-        <input
-          class="form-control"
-          type="text"
-          id="email"
-          formControlName="useremail"
-          [ngClass]="{'is-invalid' : Useremail?.errors && Useremail?.touched, 'is-valid': !Useremail?.errors && Useremail?.touched}"
-          >
-        <div *ngIf="Useremail?.errors && Useremail?.touched">
-          <p *ngIf="Useremail?.hasError('required')" class="text-danger">
-            El email es requerido.
-          </p>
-          <p *ngIf="Useremail?.hasError('email')" class="text-danger">
-            El formato email debe de válido.
-          </p>
-        </div>
-
+  <form #f="ngForm" class="form" (ngSubmit)="onLogin()" novalidate>
+    <h1>
+      Iniciar Sesión
+    </h1>
+    <div>
+      <label for="nombreUsuario">Usuario:</label>
+      <input class="form-control" type="text" id="email" name="nombreUsuario" [(ngModel)]="nombreUsuario"
+        [ngClass]="{'is-invalid' : NombreUsuario?.errors && NombreUsuario?.touched, 'is-valid': !NombreUsuario?.errors && NombreUsuario?.touched}">
+      <div *ngIf=" NombreUsuario?.errors &&  NombreUsuario?.touched">
+        <p *ngIf=" NombreUsuario?.hasError('required')" class="text-danger">
+          El usuario es requerido.
+        </p>
       </div>
-      <div>
-        <label for="email">Password:</label>
-        <input
-        class="form-control"
-        type="password"
-        formControlName="password"
-        [ngClass]="{'is-invalid' : Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
-        >
+
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input class="form-control" type="password" name="password" [(ngModel)]="password"
+        [ngClass]="{'is-invalid' : Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
       <div *ngIf="Password?.errors && Password?.touched">
-         <p *ngIf="Password?.hasError('required')" class="text-danger">
+        <p *ngIf="Password?.hasError('required')" class="text-danger">
           La contraseña es requerida
         </p>
         <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
           La contraseña debe tener 8 o más carácteres
         </p>
-      </div>
-      </div>
-      <div class="btn-send">
-        <button [disabled]="form.invalid">Enviar</button>
-      </div>
-      <div class="container-validacion">
-        <p>
-          <a
-          routerLink="/registrar">Crear cuenta</a>
-        </p>
-      </div>
-    </form>
+      </div> -->
+    </div>
+    <div class="btn-send">
+      <button type="submit" [disabled]="f.invalid">Enviar</button>
+    </div>
+    <div class="container-validacion">
+      <p>
+        <a routerLink="/registrar">Crear cuenta</a>
+      </p>
+    </div>
+  </form>
 </div>
-

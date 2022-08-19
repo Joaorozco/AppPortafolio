@@ -1,17 +1,25 @@
-<div class="contenedor" >
+<div class="contenedor">
   <div class="title-portfolio">
-    <h1>Proyectos</h1>
+    <h1>Experiencia Laboral</h1>
   </div>
-  <div class="grid">
-    <figure *ngFor="let data of portfolio">
-      <img
-      [src]="data.src" alt="">
-      <div class="capa">
-        <h3>{{data.title}}</h3>
+  <a routerLink="/newExperience" *ngIf="isLogged">
+    <div class="btn-edit">
+      <i class="fa fa-plus-square" aria-hidden="true"></i>
+    </div>
+  </a>
+  <div class="container-experiencias">
+      <div class="box-experiencia"  *ngFor="let i of expe">
+        <a *ngIf="isLogged">
+          <div class="btn-edit" >
+            <i class="fa fa-pencil-square" aria-hidden="true"></i>
+          </div>
+        </a>
+        <label>Nombre de la empresa:</label>
+        <h2>{{i.nombreE}}</h2>
         <p>
-          {{data.text}}
+          {{i.descripcionE}}
         </p>
+
       </div>
-    </figure>
   </div>
 </div>

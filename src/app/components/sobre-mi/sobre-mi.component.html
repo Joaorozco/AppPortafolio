@@ -2,33 +2,86 @@
   <h1 class="text-center" id="titulo-sobre-mi">Sobre mí</h1>
   <div class="container-sobre-mi">
     <div class="img-perfil">
-      <app-btn-edit-perfil>
+      <app-btn-edit-perfil *ngIf="isLogged">
       </app-btn-edit-perfil>
-      <img alt="Perfil image" [src]="sobreMi.imgPerfil">
+      <img alt="Perfil image" src="../../../assets/perfil-cv.jpg">
     </div>
     <p class="text-center">
       {{a.descripcion}}
     </p>
   </div>
   <div class="container-btn-dowload">
-    <a
-      href="../../../assets/ALexis Joaquin Orozco-CV.pdf"
-      download="AlexisJoaquinOrozco-CV"
-      id="dowload-cv"
+    <a href="../../../assets/ALexis Joaquin Orozco-CV.pdf" download="AlexisJoaquinOrozco-CV" id="dowload-cv"
       class="btn btn-danger">
       {{buttonDowload}}
     </a>
   </div>
-<div id="section-skills" *ngFor="let data of skills">
-        <h1 class="text-center">{{data.title}}</h1>
-  <div id="container-skills">
-    <dl>
-      <dd>
-        <img *ngFor="let src of data.img"
-            class="svg-skill"
-            [src]="src"
-            alt="SVG-Skill">
-      </dd>
-    </dl>
+  <div id="section-skills">
+    <h1 class="text-center">Skills</h1>
+    <div id="container-skills" class="col-sm-4 col-md-4 col-lg-4">
+      <circle-progress
+        [title]="'HTML'"
+        [titleColor]="'white'"
+        [percent]="95"
+        [radius]="80"
+        [showImage]="true"
+        [imageSrc]="'../../../assets/html5.svg'"
+        [imageHeight]="80"
+        [imageWidth]="80"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="2"
+        [outerStrokeColor]="'#ff8800'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="600">
+      </circle-progress>
+      <circle-progress
+        [title]="'CSS'"
+        [titleColor]="'white'"
+        [percent]="90"
+        [radius]="80"
+        [showImage]="true"
+        [imageSrc]="'../../../assets/css3.svg'"
+        [imageHeight]="80"
+        [imageWidth]="80"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="2"
+        [outerStrokeColor]="'#248aa3'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="600">
+      </circle-progress>
+      <circle-progress
+        [title]="'JS'"
+        [titleColor]="'white'"
+        [percent]="75"
+        [radius]="80"
+        [showImage]="true"
+        [imageSrc]="'../../../assets/javascript.svg'"
+        [imageHeight]="80"
+        [imageWidth]="80"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="2"
+        [outerStrokeColor]="'#f5e173'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="600">
+      </circle-progress>
+      <circle-progress
+        [title]="'Angular'"
+        [titleColor]="'white'"
+        [percent]="70"
+        [radius]="80"
+        [showImage]="true"
+        [imageSrc]="'../../../assets/angular.svg'"
+        [imageHeight]="80"
+        [imageWidth]="80"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="2"
+        [outerStrokeColor]="'#d11d1d'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="600">
+      </circle-progress>
+    </div>
   </div>
-</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/service/usuario.service';
+import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +9,11 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class HomeComponent implements OnInit {
   miHome:any;
 
-  constructor(private datosHome: UsuarioService) { }
+  constructor(private data: PersonaService) { }
 
   ngOnInit(): void {
-    this.datosHome.obtenerDato().subscribe(data => {
+    this.data.getPersona().subscribe(data => {
       this.miHome = data;
     });
   }
-
-
 }

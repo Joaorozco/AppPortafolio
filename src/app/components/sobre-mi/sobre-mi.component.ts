@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UsuarioService } from 'src/app/service/usuario.service';
+import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -10,20 +11,21 @@ export class SobreMiComponent implements OnInit {
   @Input() buttonDowload:String = "Descargar CV";
   sobreMi:any;
   skills:any;
-
+  isLogged: boolean = false;
   constructor(
-    private datos: UsuarioService
+    private data: PersonaService, private tokenService: TokenService
+
   ) { }
 
   ngOnInit(): void {
-    this.datos.obtenerDato().subscribe(data => {
-      console.log(data);
-      this.sobreMi = data;
-    })
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
 
-    this.datos.obtenerDato().subscribe(data => {
-      console.log(data);
-      this.skills = data;
+    this.data.getPersona().subscribe(data => {
+      this.sobreMi = data;
     })
   }
 }

@@ -8,10 +8,10 @@ import { PortafoliosComponent } from './components/portafolios/portafolios.compo
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { LoginComponent } from './components/login/login.component';
 import { BtnEditPerfilComponent } from './components/btn-edit-perfil/btn-edit-perfil.component';
-import { VigilanteGuard } from './guards/vigilante.guard';
+/* import { VigilanteGuard } from './guards/vigilante.guard'; */
 import { RegistrarComponent } from './components/registrar/registrar.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { Error404Component } from './components/error404/error404.component';
+import { NewExperienciaComponent } from './components/portafolios/new-experiencia.component';
 
 const routes: Routes = [
 
@@ -55,6 +55,11 @@ const routes: Routes = [
   {
     path: "error",
     component: Error404Component
+  }
+  ,
+  {
+    path: "newExperience",
+    component: NewExperienciaComponent
   }
 ];
 

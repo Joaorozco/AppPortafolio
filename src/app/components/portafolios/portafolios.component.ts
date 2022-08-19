@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioService } from 'src/app/service/portfolio.service';
+import { Experiencia } from 'src/app/model/experiencia';
+import { SExperienciaService } from 'src/app/service/s-experiencia.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-portafolios',
@@ -7,17 +9,21 @@ import { PortfolioService } from 'src/app/service/portfolio.service';
   styleUrls: ['./portafolios.component.css']
 })
 export class PortafoliosComponent implements OnInit {
-  portfolio: any
+  expe: Experiencia[] = [];
+  isLogged = false
+
   constructor(
-    private datos: PortfolioService
+    private sExperiencia: SExperienciaService, private tokenService: TokenService
   ) { }
 
+
   ngOnInit(): void {
-    this.datos.obtenerDatosPortfolio().subscribe(data => {
-      console.log(data);
-      this.portfolio = data
-    })
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+
+    this.sExperiencia.lista().subscribe(data => {this.expe = data;})
   }
-
-
 }

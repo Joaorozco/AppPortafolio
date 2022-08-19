@@ -38,6 +38,7 @@ export class BtnEditPerfilComponent implements OnInit {
   }
 
   capturandoFile(event:any) {
-    console.log(event)
+    console.log(event);
+
   }
 }

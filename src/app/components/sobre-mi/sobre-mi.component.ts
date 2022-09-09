@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PersonaService } from 'src/app/service/persona.service';
 import { TokenService } from 'src/app/service/token.service';
 
@@ -8,12 +9,12 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent implements OnInit {
-  @Input() buttonDowload:String = "Descargar CV";
-  sobreMi:any;
-  skills:any;
+  @Input() buttonDowload: String = "Descargar CV";
+  sobreMi: any;
+  skills: any;
   isLogged: boolean = false;
   constructor(
-    private data: PersonaService, private tokenService: TokenService
+    private data: PersonaService, private tokenService: TokenService, private activetedRouter: ActivatedRoute, private router: Router
 
   ) { }
 

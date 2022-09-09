@@ -1,9 +1,9 @@
 <div id="section-sobre-mi" *ngFor="let a of sobreMi">
   <h1 class="text-center" id="titulo-sobre-mi">Sobre mí</h1>
+  <app-btn-edit-perfil *ngIf="isLogged">
+  </app-btn-edit-perfil>
   <div class="container-sobre-mi">
     <div class="img-perfil">
-      <app-btn-edit-perfil *ngIf="isLogged">
-      </app-btn-edit-perfil>
       <img alt="Perfil image" src="../../../assets/perfil-cv.jpg">
     </div>
     <p class="text-center">
@@ -70,7 +70,7 @@
       <circle-progress
         [title]="'Angular'"
         [titleColor]="'white'"
-        [percent]="70"
+        [percent]="50"
         [radius]="80"
         [showImage]="true"
         [imageSrc]="'../../../assets/angular.svg'"

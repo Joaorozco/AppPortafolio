@@ -12,6 +12,8 @@ import { BtnEditPerfilComponent } from './components/btn-edit-perfil/btn-edit-pe
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { Error404Component } from './components/error404/error404.component';
 import { NewExperienciaComponent } from './components/portafolios/new-experiencia.component';
+import { EditExperienciaComponent } from './components/portafolios/edit-experiencia.component';
+import { NeweducacionComponent } from './components/estudios/neweducacion.component';
 
 const routes: Routes = [
 
@@ -60,6 +62,16 @@ const routes: Routes = [
   {
     path: "newExperience",
     component: NewExperienciaComponent
+  }
+  ,
+  {
+    path: "editExperience/:id",
+    component: EditExperienciaComponent
+  }
+  ,
+  {
+    path: "newEdu",
+    component: NeweducacionComponent
   }
 ];
 

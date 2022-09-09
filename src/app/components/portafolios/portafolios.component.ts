@@ -26,4 +26,14 @@ export class PortafoliosComponent implements OnInit {
 
     this.sExperiencia.lista().subscribe(data => {this.expe = data;})
   }
+
+  delete(id : number){
+    if(id != undefined){
+      this.sExperiencia.delete(id).subscribe(data => {
+        this.ngOnInit();
+      }, err => {
+        alert('No se pudo eliminar')
+      })
+    }
+  }
 }

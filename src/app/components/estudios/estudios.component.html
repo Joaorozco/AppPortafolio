@@ -1,11 +1,18 @@
 <div class="container-certificados">
   <div class="title-certificados">
     <h1>
-      Certificados
+      Educación
     </h1>
   </div>
-  <div class="container-certificados-png">
+  <a routerLink="/newEdu" *ngIf="isLogged">
+    <div class="btn-edit">
+      <i class="fa fa-plus-square" aria-hidden="true"></i>
+    </div>
+  </a>
+  <div class="container-certificados-png" *ngFor="let Educacion of educacion">
     <div class="items" id="item1">
+      <h2 class="title-education">{{Educacion.tituloE}}</h2>
+      <h3 class="name-education">{{Educacion.nombreE}}</h3>
       <img src="../../../assets/certificados/certificado instroduccion al desarrollo web_page-0001.png">
     </div>
     <div class="items" id="item2">

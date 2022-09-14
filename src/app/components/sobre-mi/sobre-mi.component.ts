@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { PersonaService } from 'src/app/service/persona.service';
 import { TokenService } from 'src/app/service/token.service';
 
@@ -14,7 +14,7 @@ export class SobreMiComponent implements OnInit {
   skills: any;
   isLogged: boolean = false;
   constructor(
-    private data: PersonaService, private tokenService: TokenService, private activetedRouter: ActivatedRoute, private router: Router
+    private data: PersonaService, private tokenService: TokenService, private router: Router
 
   ) { }
 

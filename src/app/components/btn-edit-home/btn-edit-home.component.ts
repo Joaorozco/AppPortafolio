@@ -6,11 +6,11 @@ import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
-  selector: 'app-btn-edit-perfil',
-  templateUrl: './btn-edit-perfil.component.html',
-  styleUrls: ['./btn-edit-perfil.component.css']
+  selector: 'app-btn-edit-home',
+  templateUrl: './btn-edit-home.component.html',
+  styleUrls: ['./btn-edit-home.component.css']
 })
-export class BtnEditPerfilComponent implements OnInit {
+export class BtnEditHomeComponent implements OnInit {
   toolEditor = false;
   datails: Persona;
 
@@ -52,4 +52,5 @@ export class BtnEditPerfilComponent implements OnInit {
 
     }
   }
+
 }

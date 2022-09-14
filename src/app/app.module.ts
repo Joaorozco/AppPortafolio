@@ -24,6 +24,7 @@ import { NewExperienciaComponent } from './components/portafolios/new-experienci
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { EditExperienciaComponent } from './components/portafolios/edit-experiencia.component';
 import { NeweducacionComponent } from './components/estudios/neweducacion.component';
+import { BtnEditHomeComponent } from './components/btn-edit-home/btn-edit-home.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { NeweducacionComponent } from './components/estudios/neweducacion.compon
     LoginComponent,
     NewExperienciaComponent,
     EditExperienciaComponent,
-    NeweducacionComponent
+    NeweducacionComponent,
+    BtnEditHomeComponent
   ],
   imports: [
     BrowserModule,

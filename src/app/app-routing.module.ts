@@ -13,7 +13,8 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
 import { Error404Component } from './components/error404/error404.component';
 import { NewExperienciaComponent } from './components/portafolios/new-experiencia.component';
 import { EditExperienciaComponent } from './components/portafolios/edit-experiencia.component';
-import { NeweducacionComponent } from './components/estudios/neweducacion.component';
+import { BtnEditEduComponent } from './components/btn-edit-edu/btn-edit-edu.component';
+
 
 const routes: Routes = [
 
@@ -36,7 +37,12 @@ const routes: Routes = [
   },
   {
     path:"educacion",
-    component: EstudiosComponent,
+    component: EstudiosComponent
+  },
+  {
+    path:"edit/:id",
+    component: BtnEditEduComponent,
+
   },
   {
     path:"portafolios",
@@ -67,12 +73,8 @@ const routes: Routes = [
   {
     path: "editExperience/:id",
     component: EditExperienciaComponent
-  }
-  ,
-  {
-    path: "newEdu",
-    component: NeweducacionComponent
-  }
+  },
+
 ];
 
 @NgModule({

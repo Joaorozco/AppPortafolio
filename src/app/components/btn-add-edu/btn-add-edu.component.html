@@ -1,0 +1,37 @@
+<a>
+  <div class="btn-edit" (click)="openEditor()">
+    <i class="fa fa-plus-square" aria-hidden="true"></i>
+  </div>
+</a>
+
+<div class="container-editor" [ngClass]="toolEditor ? 'display': ''">
+  <div class="tool-editor">
+    <div class="btn-edit-close" (click)="closeEditor()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm" >
+      <h3 class="text-light pt-4">Agregar educacion</h3>
+      <div class="mb-3">
+        <h3 class="text-light pt-4" for="nombreE">Título o carrera:</h3>
+        <input class="form-control" id="exmpleFormControlTextarea1" rows="1" name="tituloE"
+          [(ngModel)]="tituloE">
+      </div>
+      <div class="mb-3">
+        <h3 class="text-light pt-4" for="nombreE">Nombre de la institucion:</h3>
+        <input class="form-control" id="exmpleFormControlTextarea1" rows="1" name="nombreE"
+          [(ngModel)]="nombreE">
+      </div>
+      <div class="mb-3">
+        <h3 class="text-light pt-4" for="descripcionE">Descripcion:</h3>
+        <input class="form-control" id="exmpleFormControlTextarea1" rows="3" name="descripcionE"
+          [(ngModel)]="descripcionE">
+      </div>
+      <div class="btn-cambios pb-4">
+        <button type="submit">
+          <span>Guardar cambios</span>
+        </button>
+      </div>
+    </form>
+
+  </div>
+</div>

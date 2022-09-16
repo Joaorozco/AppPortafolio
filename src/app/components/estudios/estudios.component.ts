@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -10,9 +11,9 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class EstudiosComponent implements OnInit {
   educacion: Educacion[] = [];
-
-  constructor(private educacionService: EducacionService, private tokenService: TokenService) { }
   isLogged = false;
+
+  constructor(private educacionService: EducacionService, private tokenService: TokenService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.cargarEducacion();
@@ -28,8 +29,6 @@ export class EstudiosComponent implements OnInit {
     this.educacionService.lista().subscribe(
       data=> {
         this.educacion = data
-        console.log(data);
-
       }
     )
   }

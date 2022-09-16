@@ -4,18 +4,17 @@
       Educación
     </h1>
   </div>
-  <a routerLink="/newEdu" *ngIf="isLogged">
-    <div class="btn-edit">
-      <i class="fa fa-plus-square" aria-hidden="true"></i>
-    </div>
-  </a>
-  <div class="container-certificados-png" *ngFor="let Educacion of educacion">
-    <div class="items" id="item1">
+  <app-btn-add-edu *ngIf="isLogged"></app-btn-add-edu>
+  <div class="container-certificados-png" >
+    <div *ngFor="let Educacion of educacion" class="item-educacion">
+      <app-btn-edit-edu  *ngIf="isLogged" routerLink="edit/{{Educacion.id}}"></app-btn-edit-edu>
       <h2 class="title-education">{{Educacion.tituloE}}</h2>
       <h3 class="name-education">{{Educacion.nombreE}}</h3>
-      <img src="../../../assets/certificados/certificado instroduccion al desarrollo web_page-0001.png">
+      <p>{{Educacion.descripcionE}}</p>
+      <hr>
     </div>
-    <div class="items" id="item2">
+    <!-- <img src="../../../assets/certificados/certificado instroduccion al desarrollo web_page-0001.png"> -->
+    <!-- <div class="items" id="item2">
       <img src="../../../assets/certificados/Certificado HTML5 y CSS3.png">
     </div>
     <div class="items" id="item3">
@@ -26,6 +25,6 @@
     </div>
     <div class="items" id="item5">
       <img src="../../../assets/certificados/argentina_programa_octubre_diciembre_2021_page-0001.png">
-    </div>
+    </div> -->
   </div>
 </div>

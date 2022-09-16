@@ -16,8 +16,13 @@
     </div>
     <div>
       <label for="password">Password:</label>
-      <input class="form-control" type="password" name="password" [(ngModel)]="password"
-        [ngClass]="{'is-invalid' : Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
+      <div class="container-password">
+        <input #inputPassword class="form-control" type="password" name="password" [(ngModel)]="password"
+          [ngClass]="{'is-invalid' : Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}">
+        <div class="eyeDisplay" (click)="displayPassword()">
+          <i #eye class="fa fa-eye" aria-hidden="true"></i>
+        </div>
+      </div>
       <div *ngIf="Password?.errors && Password?.touched">
         <p *ngIf="Password?.hasError('required')" class="text-danger">
           La contraseña es requerida
@@ -25,7 +30,7 @@
         <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
           La contraseña debe tener 8 o más carácteres
         </p>
-      </div> -->
+      </div>
     </div>
     <div class="btn-send">
       <button type="submit" [disabled]="f.invalid">Enviar</button>

@@ -16,10 +16,11 @@ export class PersonaService {
   }
 
   public getDetails():Observable<Persona>{
-    return this.http.get<Persona>(this.URL + `detailp/1`);
+    return this.http.get<Persona>(this.URL + 'detailp/1');
   }
 
   public update(persona: Persona):Observable<any>{
-    return this.http.put<any>(this.URL + `update/1`, persona);
+    return this.http.put<any>(this.URL + 'update/1', persona);
   }
+
 }

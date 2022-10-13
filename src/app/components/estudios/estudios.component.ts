@@ -33,7 +33,7 @@ export class EstudiosComponent implements OnInit {
     )
   }
 
-  borrar(id:number){
+  delete(id:number){
     if(id != undefined){
       this.educacionService.delete(id).subscribe(
         data => {

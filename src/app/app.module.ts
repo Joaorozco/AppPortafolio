@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -25,7 +26,13 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { EditExperienciaComponent } from './components/portafolios/edit-experiencia.component';
 import { BtnEditHomeComponent } from './components/btn-edit-home/btn-edit-home.component';
 import { BtnAddEduComponent } from './components/btn-add-edu/btn-add-edu.component';
-import { BtnEditEduComponent } from './components/btn-edit-edu/btn-edit-edu.component';
+import { BtnAddSkillComponent } from './components/btn-add-skill/btn-add-skill.component';
+import { EditEducationComponent } from './components/estudios/edit-education.component';
+import { EditSkillComponent } from './components/sobre-mi/edit-skill.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +52,9 @@ import { BtnEditEduComponent } from './components/btn-edit-edu/btn-edit-edu.comp
     EditExperienciaComponent,
     BtnEditHomeComponent,
     BtnAddEduComponent,
-    BtnEditEduComponent
+    BtnAddSkillComponent,
+    EditEducationComponent,
+    EditSkillComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +64,10 @@ import { BtnEditEduComponent } from './components/btn-edit-edu/btn-edit-edu.comp
     BrowserAnimationsModule,
     FormsModule,
     CommonModule,
-    NgCircleProgressModule.forRoot({})
+    MatProgressBarModule,
+    NgCircleProgressModule.forRoot({}),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

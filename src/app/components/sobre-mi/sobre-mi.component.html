@@ -4,7 +4,7 @@
   </app-btn-edit-perfil>
   <div class="container-sobre-mi">
     <div class="img-perfil">
-      <img alt="Perfil image" src="../../../assets/perfil-cv.jpg">
+      <img alt="Perfil image" src="{{a.imagen}}">
     </div>
     <p class="text-center">
       {{a.descripcion}}
@@ -18,70 +18,33 @@
   </div>
   <div id="section-skills">
     <h1 class="text-center">Skills</h1>
-    <div id="container-skills" class="col-sm-4 col-md-4 col-lg-4">
+    <app-btn-add-skill *ngIf="isLogged"></app-btn-add-skill>
+    <div id="container-skills" class="col-sm-4 col-md-4 col-lg-4" *ngFor="let i of skill">
       <circle-progress
-        [title]="'HTML'"
+        [title]="(i.name)"
         [titleColor]="'white'"
-        [percent]="95"
+        [percent]="(i.porcentaje)"
         [radius]="80"
-        [showImage]="true"
-        [imageSrc]="'../../../assets/html5.svg'"
-        [imageHeight]="80"
-        [imageWidth]="80"
+        [showTitle]="true"
+        [showImage]="false"
+        [showUnits]="false"
+        [showSubtitle]="false"
         [outerStrokeWidth]="16"
         [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#ff8800'"
+        [outerStrokeColor]="'#87e1c7'"
         [innerStrokeColor]="'#C7E596'"
         [animation]="true"
         [animationDuration]="600">
       </circle-progress>
-      <circle-progress
-        [title]="'CSS'"
-        [titleColor]="'white'"
-        [percent]="90"
-        [radius]="80"
-        [showImage]="true"
-        [imageSrc]="'../../../assets/css3.svg'"
-        [imageHeight]="80"
-        [imageWidth]="80"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#248aa3'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="600">
-      </circle-progress>
-      <circle-progress
-        [title]="'JS'"
-        [titleColor]="'white'"
-        [percent]="75"
-        [radius]="80"
-        [showImage]="true"
-        [imageSrc]="'../../../assets/javascript.svg'"
-        [imageHeight]="80"
-        [imageWidth]="80"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#f5e173'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="600">
-      </circle-progress>
-      <circle-progress
-        [title]="'Angular'"
-        [titleColor]="'white'"
-        [percent]="50"
-        [radius]="80"
-        [showImage]="true"
-        [imageSrc]="'../../../assets/angular.svg'"
-        [imageHeight]="80"
-        [imageWidth]="80"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'#d11d1d'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="600">
-      </circle-progress>
+      <a *ngIf="isLogged" routerLink="/editSkill/{{i.id}}">
+        <div class="btn-edit" >
+          <i class="fa fa-pencil-square" aria-hidden="true"></i>
+        </div>
+      </a>
+      <a *ngIf="isLogged" (click)="delete(i.id)">
+        <div class="btn-delete" >
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </div>
+      </a>
     </div>
   </div>

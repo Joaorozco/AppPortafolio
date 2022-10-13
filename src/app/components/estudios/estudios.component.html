@@ -7,24 +7,20 @@
   <app-btn-add-edu *ngIf="isLogged"></app-btn-add-edu>
   <div class="container-certificados-png" >
     <div *ngFor="let Educacion of educacion" class="item-educacion">
-      <app-btn-edit-edu  *ngIf="isLogged" routerLink="edit/{{Educacion.id}}"></app-btn-edit-edu>
+      <a *ngIf="isLogged" routerLink="/editExperience/{{Educacion.id}}">
+        <div class="btn-edit" >
+          <i class="fa fa-pencil-square" aria-hidden="true"></i>
+        </div>
+      </a>
+      <a *ngIf="isLogged" (click)="delete(Educacion.id)">
+        <div class="btn-delete" >
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </div>
+      </a>
       <h2 class="title-education">{{Educacion.tituloE}}</h2>
       <h3 class="name-education">{{Educacion.nombreE}}</h3>
       <p>{{Educacion.descripcionE}}</p>
       <hr>
     </div>
-    <!-- <img src="../../../assets/certificados/certificado instroduccion al desarrollo web_page-0001.png"> -->
-    <!-- <div class="items" id="item2">
-      <img src="../../../assets/certificados/Certificado HTML5 y CSS3.png">
-    </div>
-    <div class="items" id="item3">
-      <img src="../../../assets/certificados/Certificado JavaScript.png">
-    </div>
-    <div class="items" id="item4">
-      <img src="../../../assets/certificados/CertificadoEducacionIt_page-0001.png">
-    </div>
-    <div class="items" id="item5">
-      <img src="../../../assets/certificados/argentina_programa_octubre_diciembre_2021_page-0001.png">
-    </div> -->
   </div>
 </div>

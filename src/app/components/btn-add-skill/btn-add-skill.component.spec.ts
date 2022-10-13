@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SobreMiComponent } from './sobre-mi.component';
+import { BtnAddSkillComponent } from './btn-add-skill.component';
 
-describe('SobreMiComponent', () => {
-  let component: SobreMiComponent;
-  let fixture: ComponentFixture<SobreMiComponent>;
+describe('BtnAddSkillComponent', () => {
+  let component: BtnAddSkillComponent;
+  let fixture: ComponentFixture<BtnAddSkillComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SobreMiComponent ]
+      declarations: [ BtnAddSkillComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SobreMiComponent);
+    fixture = TestBed.createComponent(BtnAddSkillComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

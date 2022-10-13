@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-import { FileHandle } from 'src/app/model/file-handle.model';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona';
+import { ImageService } from 'src/app/service/image.service';
 import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
@@ -12,13 +12,13 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class BtnEditPerfilComponent implements OnInit {
   toolEditor = false;
-  datails: Persona;
-
-  constructor(private router: Router, private data: PersonaService, private sanitizer: DomSanitizer) { }
+  details: Persona = null;
+  selectedFile: File;
+  constructor(private router: Router, private data: PersonaService, private httpClient: HttpClient, public imageService: ImageService, private activatedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.data.getDetails().subscribe(data => {
-      this.datails = data;
+      this.details = data;
     })
   }
 
@@ -30,26 +30,20 @@ export class BtnEditPerfilComponent implements OnInit {
     this.toolEditor = false
   }
 
+  uploadImage($event: any) {
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "perfil_" + id;
+    this.imageService.uploadImage($event, name)
+  }
+
   onUpdate(): void {
-    this.data.update(this.datails).subscribe(data => {
-      location.reload();
-    }, err => {
-      alert('Error al modificar experiencia');
-      this.router.navigate(['']);
+    this.details.imagen = this.imageService.url;
+    this.data.update(this.details).subscribe(data => {
+      if (data.status == 200) {
+        console.log("Actualizado");
+      }
     })
   }
 
-  capturandoFile(event: any) {
-    if (event.target.files) {
-      const file = event.target.files[0];
 
-      const fileHandle: FileHandle = {
-        file: file,
-        url: this.sanitizer.bypassSecurityTrustHtml(
-          window.URL.createObjectURL(file)
-        )
-      }
-
-    }
-  }
 }

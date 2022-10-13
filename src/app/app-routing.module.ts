@@ -13,68 +13,25 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
 import { Error404Component } from './components/error404/error404.component';
 import { NewExperienciaComponent } from './components/portafolios/new-experiencia.component';
 import { EditExperienciaComponent } from './components/portafolios/edit-experiencia.component';
-import { BtnEditEduComponent } from './components/btn-edit-edu/btn-edit-edu.component';
+import { EditEducationComponent } from './components/estudios/edit-education.component';
+import { EditSkillComponent } from './components/sobre-mi/edit-skill.component';
 
 
 const routes: Routes = [
-
-  { path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
-  },
-  {
-    path:"home",
-    component: HomeComponent,
-  },
-
-  {
-    path:"sobre-mi",
-    component: SobreMiComponent
-  },
-  {
-    path: "sobre-mi/edit",
-    component: BtnEditPerfilComponent,
-  },
-  {
-    path:"educacion",
-    component: EstudiosComponent
-  },
-  {
-    path:"edit/:id",
-    component: BtnEditEduComponent,
-
-  },
-  {
-    path:"portafolios",
-    component: PortafoliosComponent,
-  },
-  {
-    path:"contacto",
-    component: ContactoComponent,
-  },
-  {
-    path:"registrar",
-    component: RegistrarComponent,
-  },
-  {
-    path:"login",
-    component: LoginComponent,
-  },
-  {
-    path: "error",
-    component: Error404Component
-  }
-  ,
-  {
-    path: "newExperience",
-    component: NewExperienciaComponent
-  }
-  ,
-  {
-    path: "editExperience/:id",
-    component: EditExperienciaComponent
-  },
-
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: "home", component: HomeComponent },
+  { path: "sobre-mi", component: SobreMiComponent },
+  { path: "sobre-mi/edit", component: BtnEditPerfilComponent },
+  { path: "educacion", component: EstudiosComponent },
+  { path: "portafolios", component: PortafoliosComponent },
+  { path: "contacto", component: ContactoComponent },
+  { path: "registrar", component: RegistrarComponent },
+  { path: "login", component: LoginComponent },
+  { path: "error", component: Error404Component },
+  { path: "newExperience", component: NewExperienciaComponent },
+  { path: "editExperience/:id", component: EditExperienciaComponent },
+  { path: "editEducation/:id", component: EditEducationComponent },
+  { path: "editSkill/:id", component: EditSkillComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,28 @@
+<a>
+  <div class="btn-edit" (click)="openEditor()">
+    <i class="fa fa-plus-square" aria-hidden="true"></i>
+  </div>
+</a>
+
+<div class="container-editor" [ngClass]="toolEditor ? 'display': ''" >
+  <div class="tool-editor">
+    <div class="btn-edit-close" (click)="closeEditor()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <h1 class="text-light">Agregar Skill</h1>
+    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate class="form">
+      <h3 class="text-light pt-3">Nombre de skill:</h3>
+      <input class="form-control" type="text" id="nameSkill" row="3" name="name" [(ngModel)]="name">
+      <div class="mb-3">
+        <h3 class="text-light pt-3">Porcentaje:</h3>
+        <input type="number" class="form-control" id="exmpleFormControlTextarea1" name="porcentaje" rows="3" [(ngModel)]="porcentaje">
+      </div>
+      <div class="btn-cambios pb-2">
+        <button type="submit">
+          <span>Guardar cambios</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

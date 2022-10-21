@@ -17,9 +17,12 @@
           <i class="fa fa-upload" aria-hidden="true"></i>
           Elja una imagen
         </label>
-        <input formControlName="imagen" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" type="file" id="file"
-          name="imagen" [(ngModel)]="details.imagen">
-          <img [src]="imageService.url" width="200px" class="text-center">
+        <input (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" type="file" id="file" name="imagen"
+          [(ngModel)]="details.imagen">
+        <div class="text-center o-c">
+          <img *ngIf="imageService.url" [src]="imageService.url" width="200px" height="200px" class="rounded"
+            alt="imagen de perfil">
+        </div>
       </div>
 
       <div class="mb-3">

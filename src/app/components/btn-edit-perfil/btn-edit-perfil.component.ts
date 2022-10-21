@@ -13,7 +13,6 @@ import { PersonaService } from 'src/app/service/persona.service';
 export class BtnEditPerfilComponent implements OnInit {
   toolEditor = false;
   details: Persona = null;
-  selectedFile: File;
   constructor(private router: Router, private data: PersonaService, private httpClient: HttpClient, public imageService: ImageService, private activatedRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -33,7 +32,7 @@ export class BtnEditPerfilComponent implements OnInit {
   uploadImage($event: any) {
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "perfil_" + id;
-    this.imageService.uploadImage($event, name)
+    this.imageService.uploadImage($event, name);
   }
 
   onUpdate(): void {

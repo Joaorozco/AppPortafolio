@@ -5,6 +5,7 @@ export class Skill {
 
   constructor(name:string, porcentaje:number){
     this.name = name;
-    this.porcentaje = porcentaje
+    this.porcentaje = porcentaje;
+
   }
 }

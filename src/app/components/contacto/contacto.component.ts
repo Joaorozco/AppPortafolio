@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
+  dataset: Details = {
+    affair: '',
+    email: '',
+    message: ''
+  };
 
-  constructor() { }
+  constructor(private https: HttpClient) { }
 
   ngOnInit(): void {
+
   }
 
+  onSubmit() {
+    this.https.post<Details>('http://localhost:8080/api/sendemail', this.dataset).subscribe(
+      res => {
+        this.dataset = res;
+        console.log(this.dataset);
+        alert('Email Sent successfully');
+        this.dataset.affair = '';
+        this.dataset.message = '';
+        this.dataset.email = '';
+
+      });
+  }
 }
+
+interface Details {
+  affair: string;
+  email: string;
+  message: string;
+}
+

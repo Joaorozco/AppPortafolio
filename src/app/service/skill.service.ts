@@ -7,7 +7,7 @@ import { Skill } from '../model/skill';
   providedIn: 'root'
 })
 export class SkillService {
-  URL = "http://localhost:8080/skills/"
+  URL = "http://localhost:8080/api/skills/"
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,6 +16,7 @@ export class SkillService {
   }
 
   public detail(id: number):Observable<Skill>{
+    console.log("Traer detalles...." + id)
     return this.httpClient.get<Skill>(this.URL + `detail/${id}`);
   }
 

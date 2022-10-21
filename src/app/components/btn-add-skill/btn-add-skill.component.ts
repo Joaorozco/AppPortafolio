@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Skill } from 'src/app/model/skill';
+import { ImageService } from 'src/app/service/image.service';
 import { SkillService } from 'src/app/service/skill.service';
 
 @Component({
@@ -12,8 +13,9 @@ export class BtnAddSkillComponent implements OnInit {
   toolEditor = false;
   name: string;
   porcentaje: number;
+  imagen: string;
 
-  constructor(private skillService: SkillService, private router: Router) { }
+  constructor(private skillService: SkillService, private router: Router, private activatedRouter: ActivatedRoute, private imageService: ImageService) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +27,7 @@ export class BtnAddSkillComponent implements OnInit {
   closeEditor(): void {
     this.toolEditor = false
   }
+
 
   onCreate() {
     const skill = new Skill(this.name, this.porcentaje);

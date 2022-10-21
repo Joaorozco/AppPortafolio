@@ -16,7 +16,6 @@ export class SobreMiComponent implements OnInit{
   sobreMi: any;
   skills: any;
   isLogged: boolean = false;
-  selectedFileName: string;
   skill: Skill[] = [];
 
   constructor(
@@ -45,7 +44,7 @@ export class SobreMiComponent implements OnInit{
   delete(id: number) {
     if (id != undefined) {
       this.skillService.delete(id).subscribe(
-        (data) => {
+        data => {
           this.updownSkills();
         }, err =>{
           alert("No se puedo borrar la skill")

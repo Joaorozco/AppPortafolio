@@ -122,3 +122,8 @@ button {
   color: #111;
  }
 
+ .o-c{
+  -o-object-fit: cover;
+  object-fit: cover;
+ }
+

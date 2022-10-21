@@ -1,9 +1,6 @@
 .btn-edit{
   width: auto;
   height: auto;
-  position: absolute;
-  right: 40%;
-  top: 67%;
   cursor: pointer;
 }
 .btn-edit i{

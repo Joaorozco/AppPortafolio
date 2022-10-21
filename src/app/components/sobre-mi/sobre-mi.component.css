@@ -131,17 +131,13 @@
 .btn-edit {
   width: auto;
   height: auto;
-  position: absolute;
-  right: 45%;
-  cursor: pointer;
+
 }
 
 .btn-delete {
   width: auto;
   height: auto;
-  position: absolute;
-  right: 43%;
-  cursor: pointer;
+
 }
 
 .btn-edit i {
@@ -171,26 +167,19 @@
 }
 
 #container-skills {
+  height: 100%;
   padding-top: 10px;
-  width: 60%;
-  margin-left: 16.5625rem;
+  margin-left: 79px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  text-align: center;
+}
+
+.container-btn-skills{
+  width: auto;
+  height: auto;
   display: flex;
-  justify-content: center;
-}
-
-#section-skills dt {
-  font-size: 20px;
-  padding: 10px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.svg-skill {
-  width: 80px;
-  height: 80px;
-}
-
-.svg-skill:hover {
-  transform: scale(1.2);
-  transition: all ease .2s;
+  justify-content: end;
+  margin-right: 3em;
 }

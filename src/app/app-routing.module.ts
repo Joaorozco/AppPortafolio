@@ -15,6 +15,7 @@ import { NewExperienciaComponent } from './components/portafolios/new-experienci
 import { EditExperienciaComponent } from './components/portafolios/edit-experiencia.component';
 import { EditEducationComponent } from './components/estudios/edit-education.component';
 import { EditSkillComponent } from './components/sobre-mi/edit-skill.component';
+import { VigilanteGuard } from './guards/vigilante.guard';
 
 
 const routes: Routes = [
@@ -25,13 +26,13 @@ const routes: Routes = [
   { path: "educacion", component: EstudiosComponent },
   { path: "portafolios", component: PortafoliosComponent },
   { path: "contacto", component: ContactoComponent },
-  { path: "registrar", component: RegistrarComponent },
+  { path: "registrar", component: RegistrarComponent, canActivate: [VigilanteGuard] },
   { path: "login", component: LoginComponent },
   { path: "error", component: Error404Component },
-  { path: "newExperience", component: NewExperienciaComponent },
-  { path: "editExperience/:id", component: EditExperienciaComponent },
-  { path: "editEducation/:id", component: EditEducationComponent },
-  { path: "editSkill/:id", component: EditSkillComponent }
+  { path: "newExperience", component: NewExperienciaComponent, canActivate: [VigilanteGuard] },
+  { path: "editExperience/:id", component: EditExperienciaComponent, canActivate: [VigilanteGuard] },
+  { path: "editEducation/:id", component: EditEducationComponent, canActivate: [VigilanteGuard] },
+  { path: "editSkill/:id", component: EditSkillComponent, canActivate: [VigilanteGuard] }
 ];
 
 @NgModule({

@@ -16,10 +16,11 @@ export class EditSkillComponent implements OnInit {
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
     this.skillService.detail(id).subscribe(
-      (data) => {
+      data => {
         this.skill = data;
-      }, (err) =>{
-        this.router.navigate(['']);
+      }, err => {
+        console.log(err)
+        this.router.navigate(['/sobre-mi']);
       })
   }
 
@@ -29,7 +30,7 @@ export class EditSkillComponent implements OnInit {
       (data) => {
         this.router.navigate(['/sobre-mi']);
       }, (err) => {
-        this.router.navigate(['']);
+        this.router.navigate(['/sobre-mi']);
       })
   }
 }

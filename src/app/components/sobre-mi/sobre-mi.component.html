@@ -1,12 +1,14 @@
 <div id="section-sobre-mi" *ngFor="let a of sobreMi">
-  <h1 class="text-center" id="titulo-sobre-mi">Sobre mí</h1>
-  <app-btn-edit-perfil *ngIf="isLogged">
-  </app-btn-edit-perfil>
+  <div class="d-flex justify-content-center">
+    <h1 class="text-center" id="titulo-sobre-mi">Sobre mí</h1>
+    <app-btn-edit-perfil class="align-self-end" *ngIf="isLogged">
+    </app-btn-edit-perfil>
+  </div>
   <div class="container-sobre-mi">
     <div class="img-perfil">
       <img alt="Perfil image" src="{{a.imagen}}">
     </div>
-    <p class="text-center">
+    <p class="text-center text-description">
       {{a.descripcion}}
     </p>
   </div>
@@ -17,12 +19,12 @@
     </a>
   </div>
   <div id="section-skills">
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center margin-left4">
       <h1 class="text-center">Skills</h1>
       <app-btn-add-skill *ngIf="isLogged"></app-btn-add-skill>
     </div>
-    <div id="container-skills" class="">
-      <div *ngFor="let i of skill">
+    <div id="container-skills" >
+      <div class="container-circle" *ngFor="let i of skill">
         <div class="container-btn-skills">
           <a *ngIf="isLogged" routerLink="/editSkill/{{i.id}}">
             <div class="btn-edit">
@@ -36,9 +38,9 @@
           </a>
         </div>
         <circle-progress [title]="(i.name)" [titleColor]="'white'" [percent]="(i.porcentaje)" [radius]="80"
-          [showTitle]="true" [showImage]="false" [showUnits]="false" [showSubtitle]="false" [outerStrokeWidth]="12"
+          [showTitle]="true" [showImage]="false" [showUnits]="false" [showSubtitle]="true" [outerStrokeWidth]="8"
           [innerStrokeWidth]="2" [outerStrokeColor]="'#5e4dab'" [innerStrokeColor]="'tranparent'" [animation]="true"
-          [animationDuration]="600">
+          [animationDuration]="600" [responsive]="true" [subtitle]="" [animateTitle]="true" [subtitleColor]="'white'">
         </circle-progress>
       </div>
     </div>

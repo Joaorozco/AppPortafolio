@@ -6,15 +6,24 @@
   color: #fff;
 }
 
+.title-certificados{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.box-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .btn-edit {
   width: auto;
   height: auto;
-  position: absolute;
-  right: 35%;
-  cursor: pointer;
 }
 
-.btn-edit i, .btn-delete i {
+.btn-edit i,
+.btn-delete i {
   color: #fff;
   font-size: 24px;
 }
@@ -22,12 +31,9 @@
 .btn-delete {
   width: auto;
   height: auto;
-  position: absolute;
-  right: 33%;
-  cursor: pointer;
 }
 
-.btn-delete i:hover{
+.btn-delete i:hover {
   color: red;
 }
 
@@ -46,7 +52,7 @@
   text-align: left;
 }
 
-.item-educacion{
+.item-educacion {
   padding-bottom: 2em;
 }
 
@@ -55,12 +61,6 @@
   width: 20rem;
   height: 15rem;
   object-fit: cover;
-}
-
-.title-certificados {
-  width: 100%;
-  height: 50px;
-  padding-top: 50px;
 }
 
 .title-certificados h1 {
@@ -76,4 +76,72 @@
 
 .name-education {
   color: #fff;
+}
+
+.description-education{
+
+}
+
+/* Responsive tablet */
+/* ----------------- */
+/* ----------------- */
+/* ----------------- */
+/* ----------------- */
+/* ----------------- */
+/* ----------------- */
+@media only screen and (max-width: 768px) {
+  .container-certificados {
+    height: auto;
+    padding-left: 79px;
+  }
+
+  .box-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+/* ----Responsive mobiles L---- */
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+@media only screen and (max-width: 425px){
+  .container-certificados {
+    height: auto;
+    padding-left: 79px;
+  }
+
+  .box-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .container-certificados-png {
+    width: 20em;
+    height: auto;
+    padding: 1em 2.5em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .title-certificados h1{
+    font-size: 30px;
+  }
+
+  .title-education {
+    font-size: medium;
+  }
+
+  .name-education {
+    font-size:small;
+  }
+
+  .description-education{
+    font-size: medium;
+  }
 }

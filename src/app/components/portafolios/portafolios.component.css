@@ -15,27 +15,25 @@
 .btn-add{
   width: auto;
   height: auto;
-  position: absolute;
-  right: 33%;
-  top: 9%;
   cursor: pointer;
-
   color: #fff;
   font-size: 24px;
 }
+
+.box-btn{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .btn-edit {
   width: auto;
   height: auto;
-  position: absolute;
-  right: 35%;
-  cursor: pointer;
+
 }
 .btn-delete {
   width: auto;
   height: auto;
-  position: absolute;
-  right: 33%;
-  cursor: pointer;
+
 }
 .btn-edit i {
   color: #fff;
@@ -67,4 +65,52 @@
 
 .box-experiencia{
   padding: 2em 0;
+}
+
+/* Responsive Tablets */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+@media only screen and (max-width: 768px){
+  .contenedor {
+    padding-left: 79px;
+  }
+
+  .box-btn{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Responsive Mobiles L */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+@media only screen and (max-width: 768px){
+  .container-experiencias {
+    width: 20em;
+    height: auto;
+    padding: 1em 2.5em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .title-portfolio h1{
+    font-size: 30px;
+  }
+
+  .title-experience{
+    font-size: medium;
+  }
+  .name-experience{
+    font-size:small;
+  }
+  .description-experience{
+    font-size: medium;
+  }
 }

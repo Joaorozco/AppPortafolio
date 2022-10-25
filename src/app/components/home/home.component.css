@@ -1,4 +1,4 @@
-.contenedor-inicio{
+.contenedor-inicio {
   background: #17181c;
   width: 100%;
   height: 100vh;
@@ -8,22 +8,83 @@
   align-content: center;
 }
 
-.contenedor-inicio h1{
+.contenedor-inicio h1 {
   width: 100%;
   color: #87e1c7;
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 1;
 }
 
-.contenedor-inicio h3{
-  font-size: 2rem;
+.contenedor-inicio h3 {
+  font-size: 1.5rem;
   color: #eaebed;
   padding-top: 5rem;
 }
 
-.header-wave{
+.header-wave {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+/* REsponsive Tablets */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+
+@media only screen and (max-width: 768px) {
+
+  .contenedor-inicio {
+    height: 100vh;
+    display: flex;
+    padding-left: 79px;
+
+  }
+
+  .contenedor-inicio h1 {
+    width: 100%;
+    color: #87e1c7;
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .contenedor-inicio h3 {
+    font-size: 1rem;
+    color: #eaebed;
+    padding-top: 5rem;
+  }
+
+  .header-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+}
+
+/* REsponsive Mobiles L */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+@media only screen and (max-width: 425px) {
+  .contenedor-inicio {
+    height: 100vh;
+  }
+
+  .contenedor-inicio h1 {
+    font-size: 2rem;
+    line-height: 0;
+  }
+
+  .contenedor-inicio h3 {
+    padding-top: 2rem;
+  }
+
+
 }

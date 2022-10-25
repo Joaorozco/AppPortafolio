@@ -56,7 +56,6 @@
   font-weight: lighter;
   padding-top: 10px;
   line-height: 1.5;
-
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -123,11 +122,6 @@
   filter: brightness(.8);
 }
 
-#section-kills {
-  position: relative;
-  background-color: #17181c;
-}
-
 .btn-edit {
   width: auto;
   height: auto;
@@ -176,10 +170,106 @@
   text-align: center;
 }
 
-.container-btn-skills{
+.container-btn-skills {
   width: auto;
   height: auto;
   display: flex;
   justify-content: end;
   margin-right: 3em;
+}
+
+
+/* Responsive Tablet */
+@media only screen and (max-width: 768px) {
+  .container-sobre-mi {
+    width: auto;
+    padding-left: 79px;
+  }
+
+  #titulo-sobre-mi{
+    margin-left: 2em;
+  }
+
+  #section-sobre-mi h3 {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .img-perfil {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .img-perfil img {
+    width: 20%;
+    border-radius:30%;
+    object-fit: cover;
+  }
+
+  .container-btn-dowload {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 4.938em;
+  }
+
+  #container-skills {
+    gap: 0;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .margin-left4{
+    margin-left: 79px;
+  }
+
+}
+/* Responsive Mobiles L */
+/* -------------------- */
+/* -------------------- */
+/* -------------------- */
+/* -------------------- */
+@media only screen and (max-width: 425px){
+  #section-sobre-mi h1 {
+    font-size: 30px;
+  }
+
+  #section-sobre-mi h3 {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .img-perfil {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .img-perfil img {
+    width: 30%;
+    border-radius:30%;
+    object-fit: cover;
+  }
+
+  #section-sobre-mi p {
+    width: 80%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: justify;
+  }
+
+  .container-btn-dowload {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 3em;
+  }
+
+  #container-skills {
+    height: 100%;
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .margin-left4{
+    margin-left: 79px;
+  }
 }

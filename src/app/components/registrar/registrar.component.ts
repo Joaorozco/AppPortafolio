@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { UsuarioService } from 'src/app/service/usuario.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class RegistrarComponent implements OnInit {
   }
   form: FormGroup
   constructor(
-    private restApi: UsuarioService,
+    private api: AuthService,
     private cookieService: CookieService,
     private formBuilder: FormBuilder,
     private router: Router
@@ -44,7 +44,7 @@ export class RegistrarComponent implements OnInit {
   }
 
   get NombreUsuario(){
-    return this.form.get('username');
+    return this.form.get('nombreUsuario');
   }
 
   get Email(){
@@ -58,7 +58,7 @@ export class RegistrarComponent implements OnInit {
 
   public sendDataRegister(){
     let requestBody = this.form.value;
-    this.restApi.post('http://localhost:8080/auth/nuevo', requestBody)
+    this.api.nuevo(requestBody)
                 .subscribe(() => {
                   return this.router.navigate(['/login'])
                 })

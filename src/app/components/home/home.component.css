@@ -78,13 +78,55 @@
   }
 
   .contenedor-inicio h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 0;
   }
 
   .contenedor-inicio h3 {
     padding-top: 2rem;
   }
+}
 
 
+/* REsponsive Mobiles M */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+@media only screen and (max-width: 375px) {
+  .contenedor-inicio {
+    height: 100vh;
+  }
+
+  .contenedor-inicio h1 {
+    font-size: 1.5rem;
+    line-height: 0;
+  }
+
+  .contenedor-inicio h3 {
+    padding-top: 2.5rem;
+  }
+}
+
+/* REsponsive Mobiles S */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+@media only screen and (max-width: 320px) {
+  .contenedor-inicio {
+    height: 100vh;
+  }
+
+  .contenedor-inicio h1 {
+    font-size: 1.5rem;
+    line-height: 0;
+  }
+
+  .contenedor-inicio h3 {
+    padding-top: 2.5rem;
+    font-size: 1rem;
+  }
 }

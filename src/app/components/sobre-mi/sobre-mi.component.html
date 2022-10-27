@@ -23,7 +23,7 @@
       <h1 class="text-center">Skills</h1>
       <app-btn-add-skill *ngIf="isLogged"></app-btn-add-skill>
     </div>
-    <div id="container-skills" >
+    <div id="container-skills">
       <div class="container-circle" *ngFor="let i of skill">
         <div class="container-btn-skills">
           <a *ngIf="isLogged" routerLink="/editSkill/{{i.id}}">
@@ -39,9 +39,10 @@
         </div>
         <circle-progress [title]="(i.name)" [titleColor]="'white'" [percent]="(i.porcentaje)" [radius]="80"
           [showTitle]="true" [showImage]="false" [showUnits]="false" [showSubtitle]="true" [outerStrokeWidth]="8"
-          [innerStrokeWidth]="2" [outerStrokeColor]="'#5e4dab'" [innerStrokeColor]="'tranparent'" [animation]="true"
+          [innerStrokeWidth]="2" [outerStrokeColor]="'#f6bf44'" [innerStrokeColor]="'tranparent'" [animation]="true"
           [animationDuration]="600" [responsive]="true" [subtitle]="" [animateTitle]="true" [subtitleColor]="'white'">
         </circle-progress>
       </div>
     </div>
   </div>
+</div>

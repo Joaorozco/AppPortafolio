@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: "educacion", component: EstudiosComponent },
   { path: "portafolios", component: PortafoliosComponent },
   { path: "contacto", component: ContactoComponent },
-  { path: "registrar", component: RegistrarComponent, canActivate: [VigilanteGuard] },
+  { path: "registrar", component: RegistrarComponent, /* canActivate: [VigilanteGuard] */ },
   { path: "login", component: LoginComponent },
   { path: "error", component: Error404Component },
   { path: "newExperience", component: NewExperienciaComponent, canActivate: [VigilanteGuard] },

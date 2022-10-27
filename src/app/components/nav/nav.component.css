@@ -124,6 +124,12 @@
 }
 
 /* Responsive Tablets */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
 
 @media only screen and (max-width: 768px) {
   .sidenav {
@@ -141,6 +147,70 @@
     margin: 0;
     display: flex;
 
+    justify-content: space-around;
+    cursor: pointer;
+  }
+
+  .sidenav-nav-item {
+    width: 100%;
+    margin-bottom: 0.625rem;
+  }
+
+  .sidenav-nav-link {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    color: #f3f3f3;
+    text-decoration: none;
+    border-radius: 0.625rem;
+    transition: all .3s ease;
+  }
+
+  .sidenav-link-icon {
+    font-size: 22px;
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 0.5rem;
+    text-align: center;
+  }
+
+  .sidenav-link-text {
+    margin-left: 1.5rem;
+    background-color: transparent;
+    font-size: medium;
+  }
+
+  .sidenav-nav-link:hover {
+    background-color: #f3f3f3;
+    color: #000;
+    border-radius: 0.625rem;
+  }
+}
+
+
+/* Responsive Tablets */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+/* ------------------ */
+
+@media only screen and (max-width: 425px){
+  .sidenav {
+    height: 100vh;
+  }
+
+  .sidenav-collapsed {
+    width: 15rem;
+
+  }
+
+  .sidenav-nav {
+    list-style: none;
+    padding: 0.938rem;
+    margin: 0;
+    display: flex;
     justify-content: space-around;
     cursor: pointer;
   }

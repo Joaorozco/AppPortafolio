@@ -67,6 +67,10 @@
   padding: 2em 0;
 }
 
+.name-experience{
+  line-height: 1.5em;
+}
+
 /* Responsive Tablets */
 /* ------------------- */
 /* ------------------- */
@@ -88,9 +92,71 @@
 /* ------------------- */
 /* ------------------- */
 /* ------------------- */
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 425px){
   .container-experiencias {
     width: 20em;
+    height: auto;
+    padding: 1em 2.5em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .title-portfolio h1{
+    font-size: 30px;
+  }
+
+  .title-experience{
+    font-size: medium;
+  }
+  .name-experience{
+    font-size:small;
+  }
+  .description-experience{
+    font-size: medium;
+  }
+}
+/* Responsive Mobiles M */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+@media only screen and (max-width: 375px){
+  .container-experiencias {
+    width: 20em;
+    height: auto;
+    padding: 1em 2.5em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .title-portfolio h1{
+    font-size: 30px;
+  }
+
+  .title-experience{
+    font-size: medium;
+  }
+  .name-experience{
+    font-size:small;
+  }
+  .description-experience{
+    font-size: medium;
+  }
+}
+/* Responsive Mobiles S */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+/* ------------------- */
+@media only screen and (max-width: 375px){
+  .container-experiencias {
+    width: 15em;
     height: auto;
     padding: 1em 2.5em;
     margin-top: 2em;

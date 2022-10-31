@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = 'http://localhost:8080/api/usuario';
+  private apiUrl = 'https://banckend-portfolio.herokuapp.com/api/usuario';
 
   constructor(private http: HttpClient) { }
 

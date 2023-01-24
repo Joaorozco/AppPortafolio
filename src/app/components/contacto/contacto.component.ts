@@ -20,7 +20,7 @@ export class ContactoComponent implements OnInit {
   }
 
   onSubmit() {
-    this.https.post<Details>('https://banckend-portfolio.herokuapp.com/api/sendemail', this.dataset).subscribe(
+    this.https.post<Details>('https://backend-portfolio-service.onrender.com/api/sendemail', this.dataset).subscribe(
       res => {
         this.dataset = res;
         console.log(this.dataset);

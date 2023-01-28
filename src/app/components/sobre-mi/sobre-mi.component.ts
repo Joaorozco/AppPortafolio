@@ -14,9 +14,11 @@ import { SkillService } from 'src/app/service/skill.service';
 export class SobreMiComponent implements OnInit{
   @Input() buttonDowload: String = "Descargar CV";
   sobreMi: any;
+  aboutMe:any;
+
   skills: any;
   isLogged: boolean = false;
-  skill: Skill[] = [];
+  skill: any;
 
   constructor(
     private data: PersonaService, private tokenService: TokenService, private router: Router, private httpClient: HttpClient, private skillService: SkillService) {}
@@ -29,16 +31,22 @@ export class SobreMiComponent implements OnInit{
     }
 
     this.updownSkills();
+    this.getDataLocalStorage();
 
     this.data.getPersona().subscribe(data => {
-      this.sobreMi = data;
+      this.aboutMe = localStorage.setItem("data", JSON.stringify(data));
     })
   }
 
   updownSkills(){
     this.skillService.list().subscribe((data) => {
-      this.skill = data;
+      this.skills = localStorage.setItem("dataSkills", JSON.stringify(data));
     })
+  }
+
+  getDataLocalStorage(){
+    this.sobreMi = JSON.parse(localStorage.getItem("data"));
+    this.skill = JSON.parse(localStorage.getItem("dataSkills"));
   }
 
   delete(id: number) {

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
   private apiUrl = 'https://backend-portfolio-service.onrender.com/api/usuario';
+  // private apiUrl = 'http://localhost:8080/api/usuario';
 
   constructor(private http: HttpClient) { }
 

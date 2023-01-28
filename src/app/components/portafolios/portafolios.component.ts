@@ -9,7 +9,8 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./portafolios.component.css']
 })
 export class PortafoliosComponent implements OnInit {
-  expe: Experiencia[] = [];
+  expe: any;
+  dataPortfolio: any
   isLogged = false
 
   constructor(
@@ -18,13 +19,23 @@ export class PortafoliosComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getData();
+    this.getDataLocalStorage();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
     }
+  }
 
-    this.sExperiencia.lista().subscribe(data => {this.expe = data;})
+  getData(){
+    this.sExperiencia.lista().subscribe(data => {
+      this.dataPortfolio = localStorage.setItem("dataPortfolio", JSON.stringify(data));
+    })
+  }
+
+  getDataLocalStorage(){
+    this.expe = JSON.parse(localStorage.getItem("dataPortfolio"));
   }
 
   delete(id : number){
